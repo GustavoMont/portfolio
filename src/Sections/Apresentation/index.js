@@ -1,9 +1,9 @@
 import React from 'react'
 import Section from '../../styles/Section'
-import { Menu } from '../../styles/Header'
+import { Menu } from '../../styles/Apresentation'
 
 
-export default function Header() {
+export default function Apresentation() {
 
     return (
         <Section>

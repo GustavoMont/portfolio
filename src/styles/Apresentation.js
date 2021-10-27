@@ -7,7 +7,6 @@ export const Menu = styled.nav`
     align-items: center;
     color: white;
     padding: 1.12rem 0;
-    
     ul{
         width: 600px;
         display: flex;
