@@ -16,6 +16,10 @@ const GlobalStyle = createGlobalStyle`
     ul{
         list-style: none;
     }
+    a{
+        color: inherit;
+        text-decoration: none;
+    }
     body{
         font-family: 'Poppins', sans-serif;
         background: var(--dark-purple);

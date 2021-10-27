@@ -13,8 +13,8 @@ export default function Apresentation() {
                     <li><a href="#about">Sobre Mim</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#knowledge">Conhecimentos</a></li>
-                    <li><a href="projects">Projetos</a></li>
-                    <li><a href="contact" >Contate-me</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact" >Contate-me</a></li>
                 </ul>
             </Menu>
         </Section>
