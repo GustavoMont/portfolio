@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Menu = styled.nav`
+    position: absolute;
+    top: 0;
+    width: 100%;
     background: transparent;
     display: flex;
     justify-content: space-between;
@@ -8,6 +11,35 @@ export const Menu = styled.nav`
     color: white;
     padding: 1.12rem 0;
     /* background-color: black; */
+    /* Título */
+    h1{
+        font-size: 2.25rem;
+        position: relative;
+        cursor: pointer;
+        &:hover span{
+            width: 10.15rem;
+            &::after{
+                color: var(--pink);
+            }
+        }
+        span{
+            transition: 1s ease width;
+            display: inline-block;
+            width: 1.84rem;
+            overflow: hidden;
+            position: relative;
+            &::after{
+                content: attr(data-text);
+                color: var(--light-purple);
+                position: absolute;
+                z-index: -1;
+                left: 0;
+                top: 2px;
+            }
+            
+        }
+    }
+    /* Lista */
     ul{
         width: 600px;
         display: flex;

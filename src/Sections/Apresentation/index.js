@@ -6,9 +6,14 @@ import { Menu } from '../../styles/Apresentation'
 export default function Apresentation() {
 
     return (
-        <Section>
+        <Section id="home">
             <Menu className="align">
-                <h1><span>G</span><span>M</span></h1>
+                <h1>
+                    <a href="#home">
+                        <span data-text="Gustavo">Gustavo</span>
+                        <span data-text="Monteiro">Monteiro</span>
+                    </a>
+                </h1>
                 <ul>
                     <li><a href="#about">Sobre Mim</a></li>
                     <li><a href="#services">Serviços</a></li>
