@@ -19,8 +19,11 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-family: 'Poppins', sans-serif;
         background: var(--dark-purple);
-        padding: 0 56px;
-    }
+        .align{
+            padding-left:  56px;
+            padding-right:  56px;
+        }
+    } 
 `
 
 export default GlobalStyle;

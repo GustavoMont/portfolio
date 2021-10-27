@@ -7,14 +7,14 @@ export default function Apresentation() {
 
     return (
         <Section>
-            <Menu>
-                <h1><span>G</span> <span>M</span></h1>
+            <Menu className="align">
+                <h1><span>G</span><span>M</span></h1>
                 <ul>
-                    <li>Sobre Mim</li>
-                    <li>Serviços</li>
-                    <li>Conhecimentos</li>
-                    <li>Projetos</li>
-                    <li>Contate-me</li>
+                    <li><a href="#about">Sobre Mim</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#knowledge">Conhecimentos</a></li>
+                    <li><a href="projects">Projetos</a></li>
+                    <li><a href="contact" >Contate-me</a></li>
                 </ul>
             </Menu>
         </Section>
