@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
     }
+    /* html{
+        scroll-behavior: smooth;
+    } */
     :root{
         --dark-purple: #36174d;
         --pink: #ff4778;
@@ -23,6 +26,8 @@ const GlobalStyle = createGlobalStyle`
     body{
         font-family: 'Poppins', sans-serif;
         background: var(--dark-purple);
+        padding: 10rem 0;
+        min-height: 100vh;
         .align{
             padding-left:  56px;
             padding-right:  56px;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Menu = styled.nav`
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
     background: transparent;
@@ -9,8 +9,8 @@ export const Menu = styled.nav`
     justify-content: space-between;
     align-items: center;
     color: white;
-    padding: 1.12rem 0;
-    /* background-color: black; */
+    height: 100px;
+    background-color: #101010;
     /* Título */
     h1{
         font-size: 2.25rem;

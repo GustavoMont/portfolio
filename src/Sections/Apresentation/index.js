@@ -4,7 +4,22 @@ import { Menu } from '../../styles/Apresentation'
 
 
 export default function Apresentation() {
+    const links = document.querySelectorAll("#home a");
 
+    for (const link of links) {
+        link.addEventListener("click", clickHandler);
+    }
+
+    function clickHandler(e) {
+        e.preventDefault();
+        const href = this.getAttribute("href");
+        const offsetTop = document.querySelector(href).offsetTop;
+
+        scroll({
+            top: offsetTop,
+            behavior: "smooth"
+        });
+    }
     return (
         <Section id="home">
             <Menu className="align">
@@ -22,6 +37,9 @@ export default function Apresentation() {
                     <li><a href="#contact" >Contate-me</a></li>
                 </ul>
             </Menu>
+
+            <h1>Teste</h1>
+
         </Section>
     )
 

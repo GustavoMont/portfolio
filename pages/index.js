@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Apresentation from '../src/Sections/Apresentation'
 import GlobalStyle from '../src/styles/GlobalStyle'
+import Section from '../src/styles/Section'
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
       </Head>
       <GlobalStyle />
       <Apresentation />
+      <Section id="about">
+        <h1>Hello, World</h1>
+      </Section>
     </> 
   )
 }
