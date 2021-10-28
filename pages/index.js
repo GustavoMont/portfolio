@@ -13,7 +13,19 @@ export default function Home() {
       <GlobalStyle />
       <Apresentation />
       <Section id="about">
-        <h1>Hello, World</h1>
+        <h1>Hello, World! About</h1>
+      </Section>
+      <Section id="services">
+        <h1>Hello, World! Services</h1>
+      </Section>
+      <Section id="knowledge">
+        <h1>Hello, World! knowledge</h1>
+      </Section>
+      <Section id="projects">
+        <h1>Hello, World! Projects</h1>
+      </Section>
+      <Section id="contact">
+        <h1>Hello, World! Contact</h1>
       </Section>
     </> 
   )

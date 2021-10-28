@@ -38,7 +38,6 @@ export default function Apresentation() {
                 </ul>
             </Menu>
 
-            <h1>Teste</h1>
 
         </Section>
     )
