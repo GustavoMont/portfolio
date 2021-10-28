@@ -1,44 +1,39 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Section from '../../styles/Section'
 import { Card, Menu } from '../../styles/Apresentation'
+import { handleBgColor, smoothScroll } from '../../utils/Apresentation'
 
 
 export default function Apresentation() {
-    const links = document.querySelectorAll("#home a");
-
-    for (const link of links) {
-        link.addEventListener("click", clickHandler);
-    }
-
-    function clickHandler(e) {
-        e.preventDefault();
-        const href = this.getAttribute("href");
-        const offsetTop = document.querySelector(href).offsetTop;
-
-        scroll({
-            top: offsetTop,
-            behavior: "smooth"
-        });
-    }
+    const sectionsLinks = [
+    {href: "about", text: "Sobre Mim"},
+    {href: "services", text: "Serviços"},
+    {href: "knowledge", text: "Conhecimentos"},
+    {href: "projects", text: "Projetos"},
+    {href: "contact", text: "Contatos"}
+]
+    useEffect(()=>{
+        window.addEventListener('scroll', handleBgColor)
+    })
     return (
         <Section id="home">
             <Menu className="align">
                 <h1>
-                    <a href="#home">
+                    <a href="#home" onClick={(e) => smoothScroll(e)}>
                         <span data-text="Gustavo">Gustavo</span>
                         <span data-text="Monteiro">Monteiro</span>
                     </a>
                 </h1>
                 <ul>
-                    <li><a href="#about">Sobre Mim</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#knowledge">Conhecimentos</a></li>
-                    <li><a href="#projects">Projetos</a></li>
-                    <li><a href="#contact" >Contate-me</a></li>
+                    {sectionsLinks.map((link) => (
+                        <li key={link.href}>
+                            <a href={`#${link.href}`} onClick={(e) => smoothScroll(e)} >{link.text}</a>
+                        </li>
+                    ) )}
                 </ul>
             </Menu>
 
-            <Card className="align">
+            <Card className="align" id="my-card">
                 <p>Olá, Eu sou</p>
                 <h2>Gustavo Monteiro</h2>
                 <p>Desenvolvedor Front-end</p>

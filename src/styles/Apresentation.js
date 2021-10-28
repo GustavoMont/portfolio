@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Menu = styled.nav`
+    &.bg-active{
+        background-color: #101010;
+    }
     position: fixed;
     top: 0;
     width: 100%;
@@ -10,7 +13,7 @@ export const Menu = styled.nav`
     align-items: center;
     color: white;
     height: 100px;
-    /* background-color: #101010; */
+    transition: .5s ease all;
     /* Título */
     h1{
         font-size: 2.25rem;
@@ -71,8 +74,9 @@ export const Card = styled.div`
     margin-top: 32px;
 
     position: absolute;
-    top: 58%;
+    top: 50%;
     transform: translateY(-50%);
+    z-index: -2;
     h2{
         font-weight: 600;
         font-size: 2.75rem;
