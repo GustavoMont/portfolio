@@ -10,7 +10,7 @@ export const Menu = styled.nav`
     align-items: center;
     color: white;
     height: 100px;
-    background-color: #101010;
+    /* background-color: #101010; */
     /* Título */
     h1{
         font-size: 2.25rem;
@@ -64,4 +64,18 @@ export const Menu = styled.nav`
             }
         }
     }
-`
+`;
+
+export const Card = styled.div`
+    font-weight: 200;
+    margin-top: 32px;
+
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    h2{
+        font-weight: 600;
+        font-size: 2.75rem;
+    }
+
+`;

@@ -1,6 +1,6 @@
 import React from 'react'
 import Section from '../../styles/Section'
-import { Menu } from '../../styles/Apresentation'
+import { Card, Menu } from '../../styles/Apresentation'
 
 
 export default function Apresentation() {
@@ -38,6 +38,11 @@ export default function Apresentation() {
                 </ul>
             </Menu>
 
+            <Card className="align">
+                <p>Olá, Eu sou</p>
+                <h2>Gustavo Monteiro</h2>
+                <p>Desenvolvedor Front-end</p>
+            </Card>
 
         </Section>
     )
