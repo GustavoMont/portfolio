@@ -1,7 +1,7 @@
 export const handleBgColor = () =>{
     const nav = document.querySelector('nav')
     const navHeight = nav.getBoundingClientRect().height
-    const cardPosition = document.querySelector('#my-card').getBoundingClientRect().top
+    const cardPosition = document.querySelector('#animation').getBoundingClientRect().top
     const condition = cardPosition - navHeight < 0  
     
     nav.classList.toggle('bg-active', condition)

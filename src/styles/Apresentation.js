@@ -12,36 +12,10 @@ export const Menu = styled.nav`
     justify-content: space-between;
     align-items: center;
     color: white;
-    height: 100px;
+    height: 90px;
     transition: .5s ease all;
-    /* Título */
-    h1{
-        font-size: 2.25rem;
-        position: relative;
-        cursor: pointer;
-        &:hover span{
-            width: 10.15rem;
-            &::after{
-                color: var(--pink);
-            }
-        }
-        span{
-            transition: 1s ease width;
-            display: inline-block;
-            width: 1.84rem;
-            overflow: hidden;
-            position: relative;
-            &::after{
-                content: attr(data-text);
-                color: var(--light-purple);
-                position: absolute;
-                z-index: -1;
-                left: 0;
-                top: 2px;
-            }
-            
-        }
-    }
+    z-index: 2;
+    
     /* Lista */
     ul{
         width: 600px;
@@ -69,17 +43,60 @@ export const Menu = styled.nav`
     }
 `;
 
+
+export const Logo = styled.h1`
+    /* Título */
+    font-size: 2.15rem;
+    position: relative;
+    cursor: pointer;
+    min-height: 0px;
+    &:hover span{
+        width: 10rem;
+        &::after{
+            color: var(--pink);
+        }
+    }
+    span{
+        vertical-align: middle;
+        transition: 1s ease width;
+        display: inline-block;
+        width: 1.78rem;
+        overflow: hidden;
+        position: relative;
+        z-index: 5;
+        &::after{
+            content: attr(data-text);
+            color: var(--light-purple);
+            position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 2px;
+        } 
+    }
+`;
+
 export const Card = styled.div`
     font-weight: 200;
     margin-top: 32px;
 
     position: absolute;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     z-index: -2;
     h2{
         font-weight: 600;
         font-size: 2.75rem;
     }
+`;
 
+export const Animation = styled.div`
+    background: white;
+    width: 490px;
+    border-radius: 20px;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 10px;
+    right: 56px;
+    z-index: -2;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px -0px, rgba(240, 46, 170, 0.3) 0px 0px, rgba(240, 46, 170, 0.2) 0px 5px, rgba(240, 46, 170, 0.1) 0px 10px, rgba(240, 46, 170, 0.05) 0px 15px;
 `;
