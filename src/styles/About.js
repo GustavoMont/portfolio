@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 
 export const Grid = styled.div`
+    max-height: 90vh;
     display: grid;
     grid-template-columns: 46% 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -26,5 +27,10 @@ export const Grid = styled.div`
             font-weight: 200;
             font-size: 1.1rem;
         }
+    }
+    #animation{
+        grid-column: 2/3;
+        grid-row: 1/3;
+        align-self: center;
     }
 `

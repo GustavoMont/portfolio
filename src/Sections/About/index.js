@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Grid } from '../../styles/About';
 import Section from '../../styles/Section';
 import { mouseIn, mouseOut } from '../../utils/About';
+import lottieJson from './25323-notebook.json';
+import Lottie from 'react-lottie-player';
 
 
 export default function About(){
@@ -30,6 +32,14 @@ export default function About(){
                 <p>
                     Atualmente estou no 4° Perído no curso de SIstemas de Informação, tenho focado no estudo do desenvolvimento web, trabalhando com front-end e backend, mais focado no front-end. Aprendo fazer pequenas automações sempre que necessário e app para celular usando React-Native.
                 </p>
+            </div>
+            <div id="animation">
+                <Lottie
+                        loop
+                        speed={1}
+                        animationData={lottieJson}
+                        play
+                />
             </div>
         </Grid>
       </Section>
