@@ -6,6 +6,10 @@ export const Grid = styled.div`
     display: grid;
     grid-template-columns: 46% 1fr;
     grid-template-rows: repeat(2, 1fr);
+    .info.back{
+        opacity: 0.5;
+        transform: scale(.7);
+    }
     .info{
         grid-column: 1/2;
         text-align: justify;
