@@ -6,6 +6,7 @@ export const Menu = styled.nav`
     }
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: transparent;
     display: flex;
@@ -57,6 +58,12 @@ export const Logo = styled.h1`
         }
     }
     span{
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
         vertical-align: middle;
         transition: 1s ease width;
         display: inline-block;
@@ -81,6 +88,7 @@ export const Card = styled.div`
 
     position: absolute;
     top: 40%;
+    left: 0;
     transform: translateY(-50%);
     z-index: -2;
     h2{
