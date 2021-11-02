@@ -18,6 +18,7 @@ export default function Apresentation() {
     useEffect(() => {
         window.addEventListener('scroll', handleBgColor)
     })
+    
     return (
         <Section id="home">
             <Menu className="align">
@@ -37,8 +38,6 @@ export default function Apresentation() {
             </Menu>
             <Animation id="animation">
                 <Lottie
-                    onMouseOver={() => {setSpeed(2.5)}}
-                    onMouseOut={() => {setSpeed(1)}}
                     loop
                     speed={speed}
                     animationData={lottieJson}
