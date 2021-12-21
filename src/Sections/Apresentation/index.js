@@ -7,18 +7,6 @@ import Lottie from 'react-lottie-player'
 
 export default function Apresentation() {
 
-    const sectionsLinks = [
-        { href: "about", text: "Sobre Mim" },
-        { href: "services", text: "Serviços" },
-        { href: "knowledge", text: "Conhecimentos" },
-        { href: "projects", text: "Projetos" },
-        { href: "contact", text: "Contatos" }
-    ]
-    const [speed, setSpeed] = useState(1)
-    useEffect(() => {
-        window.addEventListener('scroll', handleBgColor)
-    })
-    
     return (
         <Section id="home">
             <Menu className="align">
@@ -36,23 +24,6 @@ export default function Apresentation() {
                     ))}
                 </ul>
             </Menu>
-            <Animation id="animation">
-                <Lottie
-                    loop
-                    speed={speed}
-                    animationData={lottieJson}
-                    play
-                />
-            </Animation>
-
-
-
-            <Card className="align">
-                <p>Olá, Eu sou</p>
-                <h2>Gustavo Monteiro</h2>
-                <p>Desenvolvedor Front-end</p>
-            </Card>
-
         </Section>
     )
 

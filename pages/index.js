@@ -2,7 +2,6 @@ import Head from 'next/head'
 import About from '../src/Sections/About'
 import Apresentation from '../src/Sections/Apresentation'
 import GlobalStyle from '../src/styles/GlobalStyle'
-import Section from '../src/styles/Section'
 
 export default function Home() {
   return (
@@ -13,19 +12,6 @@ export default function Home() {
       </Head>
       <GlobalStyle />
       <Apresentation />
-      <About />
-      <Section id="services">
-        <h1>Hello, World! Services</h1>
-      </Section>
-      <Section id="knowledge">
-        <h1>Hello, World! knowledge</h1>
-      </Section>
-      <Section id="projects">
-        <h1>Hello, World! Projects</h1>
-      </Section>
-      <Section id="contact">
-        <h1>Hello, World! Contact</h1>
-      </Section>
     </> 
   )
 }
