@@ -9,21 +9,7 @@ export default function Apresentation() {
 
     return (
         <Section id="home">
-            <Menu className="align">
-                <Logo>
-                    <a href="#home" onClick={(e) => smoothScroll(e)}>
-                        <span data-text="Gustavo">Gustavo</span>
-                        <span data-text="Monteiro">Monteiro</span>
-                    </a>
-                </Logo>
-                <ul>
-                    {sectionsLinks.map((link) => (
-                        <li key={link.href}>
-                            <a href={`#${link.href}`} onClick={(e) => smoothScroll(e)} >{link.text}</a>
-                        </li>
-                    ))}
-                </ul>
-            </Menu>
+            
         </Section>
     )
 

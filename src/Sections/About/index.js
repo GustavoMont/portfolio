@@ -19,8 +19,8 @@ export default function About(){
     },[])
 
     return (
-    <Section id="about">
-        <Grid>
+    <Section id="sobre-mim">
+        {/* <Grid>
             <div id="me" className="info">
                 <h2>Quem sou: </h2>
                 <p>
@@ -41,7 +41,8 @@ export default function About(){
                         play
                 />
             </div>
-        </Grid>
+        </Grid> */}
+        <h2>Sobre mim</h2>
       </Section>
     )
 
