@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import NavBar from '../src/Components/NavBar'
-import About from '../src/Sections/About'
 
 import Apresentation from '../src/Sections/Apresentation'
+import About from '../src/Sections/About'
+import Habilidades from '../src/Sections/Habilidades'
+import Trabalhos from '../src/Sections/Trabalhos'
 import Conhecimentos from '../src/Sections/Conhecimentos'
 import Contato from '../src/Sections/Contato'
-import Servicos from '../src/Sections/Servicos'
-import Trabalhos from '../src/Sections/Trabalhos'
 import GlobalStyle from '../src/styles/GlobalStyle'
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <NavBar />
       <Apresentation />
       <About />
-      <Servicos />
+      <Habilidades />
       <Trabalhos />
       <Conhecimentos />
       <Contato />
