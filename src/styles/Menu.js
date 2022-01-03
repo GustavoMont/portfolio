@@ -11,38 +11,9 @@ export const Menu = styled.nav`
     align-items: center;
     color: white;
     height: 5rem;
-    /* Título */
-    h1{
-        font-size: 2.25rem;
-        position: relative;
-        cursor: pointer;
-        &:hover span{
-            width: 10.15rem;
-            &::after{
-                color: var(--pink);
-            }
-        }
-        &:hover + ul {
-            width: 0;
-            overflow: hidden;
-        }
-        span{
-            transition: 1s ease width;
-            display: inline-block;
-            width: 1.84rem;
-            overflow: hidden;
-            position: relative;
-            &::after{
-                content: attr(data-text);
-                color: var(--light-purple);
-                position: absolute;
-                z-index: -1;
-                left: 0;
-                top: 2px;
-            }
+    padding-left:  56px;
+    padding-right:  56px;
 
-        }
-    }
     /* Lista */
     ul{
         width: 600px;
@@ -69,21 +40,43 @@ export const Menu = styled.nav`
             }
         }
     }
+    /* Responsive ============ */
+    @media (max-width: 768px) {
+        padding-left:  1rem;
+        padding-right:  1rem;
+        background-color: #020202;
+        height: 12vh;
+        ul{
+            background-color: #0a0a0a;
+            position: absolute;
+            bottom: 100vh;
+            left: 0vw;
+            z-index: -10;
+            height: 88vh;
+            width: 100%;
+            flex-direction: column;
+            transition: all 1.5s ease;
+        }
+        ul.active{
+            bottom: -88vh;
+        }
+        #hamburger{
+            position: relative;
+            display: block;
+            content: '';
+            width: 40px;
+            height: 40px;
+            background-color: white;    
+        }
+    }
+    
 `;
 
 export const Logo = styled.h1`
     /* Título */
-    font-size: 2rem;
+    font-size: 2.25rem;
     position: relative;
     cursor: pointer;
-    /* border: 2px solid red; */
-    min-height: 0px;
-    &:hover span{
-        width: 8rem;
-        &::after{
-            color: var(--pink);
-        }
-    }
     span{
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -94,7 +87,7 @@ export const Logo = styled.h1`
         vertical-align: middle;
         transition: 1s ease width;
         display: inline-block;
-        width: 1.78rem;
+        width: 1.80rem;
         overflow: hidden;
         position: relative;
         z-index: 5;
@@ -105,6 +98,15 @@ export const Logo = styled.h1`
             z-index: -1;
             left: 0;
             top: 2px;
+        }
+    }
+    /* Responsive ================ */
+    @media (min-width: 1180px) {
+        &:hover span{
+            width: 10.15rem;
+            &::after{
+                color: var(--pink);
+            }
         }
     }
 `;
