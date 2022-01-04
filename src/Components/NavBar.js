@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { Logo, Menu } from "../styles/Menu"
 import { smoothScroll } from "../utils/scroll"
 
+
 export default function NavBar() {
     const sectionLinks = ["Sobre mim", "Habilidades", "Trabalhos", "Conhecimentos", "Contato"]
     const [open, setOpen] = useState(false)
@@ -16,8 +17,10 @@ export default function NavBar() {
                     <span data-text="Monteiro">Monteiro</span>
                 </a>
             </Logo>
-            <div id="hamburger" onClick={() => setOpen(!open)} ></div>
-            <ul className={open && 'active'}>
+            <div id="hamburger-menu" onClick={() => setOpen(!open)} className={open ? 'active' : undefined} >
+                <span className="bar"></span>
+            </div>
+            <ul className={open ? 'active' : undefined}>
                 {sectionLinks.map(link => (
                     <li key={link} >
                         <a 

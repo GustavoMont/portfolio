@@ -57,16 +57,45 @@ export const Menu = styled.nav`
             flex-direction: column;
             transition: all 1.5s ease;
         }
-        ul.active{
-            bottom: -88vh;
-        }
-        #hamburger{
+        #hamburger-menu{
             position: relative;
             display: block;
-            content: '';
             width: 40px;
             height: 40px;
-            background-color: white;    
+            border: 1px solid red;
+            .bar, &::before, &:after{
+                display: block;
+                width: 100%;
+                height: 5px;
+                background-color: white;
+                position: absolute;
+                content: '';
+                transition: 1s ease all;
+                border-radius: 3px;
+            }
+            &:after{
+                bottom:0;
+            }
+            .bar{
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &.active{
+                + .active{
+                    bottom: -88vh;
+                }
+                &:before{
+                    margin-top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                }
+                &:after{
+                    margin-bottom: 50%;
+                    transform: translateY(50%) rotate(45deg);
+                }
+                .bar{
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+            }
         }
     }
     
