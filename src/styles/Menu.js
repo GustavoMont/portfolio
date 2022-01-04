@@ -60,13 +60,12 @@ export const Menu = styled.nav`
         #hamburger-menu{
             position: relative;
             display: block;
-            width: 40px;
-            height: 40px;
-            border: 1px solid red;
+            width: 25px;
+            height: 25px;
             .bar, &::before, &:after{
                 display: block;
                 width: 100%;
-                height: 5px;
+                height: 3px;
                 background-color: white;
                 position: absolute;
                 content: '';
