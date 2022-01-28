@@ -6,9 +6,9 @@ import { smoothScroll } from "../utils/scroll"
 export default function NavBar() {
     const sectionLinks = ["Sobre mim", "Habilidades", "Trabalhos", "Conhecimentos", "Contato"]
     const [open, setOpen] = useState(false)
-    useEffect(() =>{
+    useEffect(() => {
         document.body.style.overflow = open ? 'hidden' : "auto"
-    },[open])
+    }, [open])
     return (
         <Menu>
             <Logo>
@@ -23,13 +23,13 @@ export default function NavBar() {
             <ul className={open ? 'active' : undefined}>
                 {sectionLinks.map(link => (
                     <li key={link} >
-                        <a 
-                            href={`#${link.toLowerCase().replace(" ", "-")}`} 
+                        <a
+                            href={`#${link.toLowerCase().replace(" ", "-")}`}
                             onClick={(e) => {
                                 setOpen(false)
                                 smoothScroll(e)
                             }}
-                            >{link}</a>
+                        >{link}</a>
                     </li>
                 ))}
             </ul>

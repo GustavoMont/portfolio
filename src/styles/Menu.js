@@ -50,8 +50,8 @@ export const Menu = styled.nav`
         ul{
             background-color: #0a0a0a;
             position: absolute;
-            bottom: 100vh;
-            left: 0vw;
+            top: 12vh;
+            left: 100vw;
             z-index: -10;
             height: 88vh;
             width: 100%;
@@ -82,7 +82,7 @@ export const Menu = styled.nav`
             }
             &.active{
                 + .active{
-                    bottom: -88vh;
+                    left: 0;
                 }
                 &:before{
                     margin-top: 50%;
