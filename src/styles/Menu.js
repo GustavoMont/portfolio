@@ -41,9 +41,10 @@ export const Menu = styled.nav`
         }
     }
     /* Responsive ============ */
-    @media (max-width: 768px) {
-        padding-left:  1rem;
-        padding-right:  1rem;
+    @media (max-width: 850px){
+        padding: 1rem;
+    }
+    @media (max-width: 790px) {
         background-color: #020202;
         height: 12vh;
         ul{
