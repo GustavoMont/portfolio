@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
         --dark-purple: #36174d;
         --pink: #ff4778;
         --white: #f3effe;
-        --light-purple: #6f36bc
+        --light-purple: #6f36bc;
     }
     ul{
         list-style: none;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Poppins', sans-serif;
-        background: var(--dark-purple);
+        background-image: linear-gradient( 90deg,  rgba(118,12,99,1) 11.2%, rgba(71,11,75,1) 98.6% );
     } 
 `
 
