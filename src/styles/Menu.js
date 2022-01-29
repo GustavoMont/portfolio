@@ -13,7 +13,7 @@ export const Menu = styled.nav`
     height: 5rem;
     padding-left:  56px;
     padding-right:  56px;
-
+    z-index: 999;
     /* Lista */
     ul{
         width: 600px;
@@ -52,7 +52,7 @@ export const Menu = styled.nav`
             position: absolute;
             top: 12vh;
             left: 100vw;
-            z-index: -10;
+            z-index: 999;
             height: 88vh;
             width: 100%;
             flex-direction: column;
