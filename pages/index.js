@@ -1,7 +1,8 @@
+import React, { useEffect } from 'react'
 import Head from 'next/head'
 import NavBar from '../src/Components/NavBar'
-
-import Apresentation from '../src/Sections/Apresentation'
+import Apresentation from '../src/Sections/Apresentation';
+import { handleBgColor } from '../src/utils/scroll'
 import About from '../src/Sections/About'
 import Habilidades from '../src/Sections/Habilidades'
 import Trabalhos from '../src/Sections/Trabalhos'
@@ -10,6 +11,9 @@ import Contato from '../src/Sections/Contato'
 import GlobalStyle from '../src/styles/GlobalStyle'
 
 export default function Home() {
+  useEffect(() => {
+    window.onscroll = handleBgColor
+  }, [])
   return (
     <>
       <Head>
@@ -24,6 +28,6 @@ export default function Home() {
       <Trabalhos />
       <Conhecimentos />
       <Contato />
-    </> 
+    </>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Logo, Menu } from "../styles/Menu"
-import { smoothScroll } from "../utils/scroll"
+import { handleBgColor, smoothScroll } from "../utils/scroll"
 
 
 export default function NavBar() {
@@ -10,7 +10,7 @@ export default function NavBar() {
         document.body.style.overflow = open ? 'hidden' : "auto"
     }, [open])
     return (
-        <Menu>
+        <Menu className={`${open && 'bg-active'}`} >
             <Logo>
                 <a href="#home" onClick={smoothScroll} >
                     <span data-text="Gustavo">Gustavo</span>

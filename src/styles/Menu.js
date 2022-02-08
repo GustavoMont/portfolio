@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Menu = styled.nav`
+    &.bg-active{
+        background-color: #020202;
+    }
     position: fixed;
     top: 0;
     left: 0;
@@ -14,6 +17,7 @@ export const Menu = styled.nav`
     padding-left:  56px;
     padding-right:  56px;
     z-index: 999;
+    transition: 1s ease all;
     /* Lista */
     ul{
         width: 600px;
@@ -45,7 +49,6 @@ export const Menu = styled.nav`
         padding: 1rem;
     }
     @media (max-width: 790px) {
-        background-color: #020202;
         height: 12vh;
         ul{
             background-color: #0a0a0a;

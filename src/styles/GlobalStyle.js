@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     :root{
         --dark-purple: #36174d;
         --pink: #ff4778;
+        --pink-50: rgba(255,71,120, 0.5);
         --white: #f3effe;
         --light-purple: #6f36bc;
     }
@@ -22,7 +23,8 @@ const GlobalStyle = createGlobalStyle`
     }
     body{
         font-family: 'Poppins', sans-serif;
-        background-image: linear-gradient( 90deg,  rgba(118,12,99,1) 11.2%, rgba(71,11,75,1) 98.6% );
+        /* background-image: linear-gradient( 90deg,  rgba(118,12,99,1) 11.2%, rgba(71,11,75,1) 98.6% ); */
+        background: var(--dark-purple);
     } 
 `
 

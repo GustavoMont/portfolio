@@ -1,28 +1,87 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const writte = keyframes`
+    to{
+        left: 110%;
+    }
+`
+const blink = keyframes`
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+`
+
+// --dark-purple: #36174d;
+// --pink: #ff4778;
+// --pink-50: #ff4778;
+// --white: #f3effe;
+// --light-purple: #6f36bc;
 
 export const Card = styled.div`
-    font-weight: 200;
-    margin-top: 32px;
-
+    border-radius: 8px;
     position: absolute;
-    top: 40%;
-    left: 0;
-    transform: translateY(-50%);
-    z-index: -2;
+    width: 95vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p{
+        font-weight: 100;
+        font-size: .8rem;
+        @media(min-width: 768px) {
+            font-size: 1rem;
+        }
+    }
     h2{
-        font-weight: 600;
-        font-size: 2.75rem;
+        font-size: 1.8rem;
+        font-weight: 500;
+        background-color: var(--light-purple) ;
+        padding: .2rem;
+        position: relative;
+        width: min(100%, 450px);
+        overflow: hidden;
+        @media(min-width: 768px) {
+            background-color: transparent;
+            display: inline;
+            font-size: 2rem;
+        }
+        &:after{
+            content: '';
+            display: block;
+            background-color: var(--light-purple);
+            width: 100%;
+            height: 3rem;
+            position: absolute;
+            top: 0;
+            left: 0%;
+            border-left: 3px solid #fff;
+            animation: 4s ${writte} steps(20) alternate-reverse infinite;
+            @media(min-width: 768px) {
+                background-color: transparent;
+                opacity: 0;
+                height: 3rem;
+                animation: 1s ${blink} infinite;
+                top: 2px;
+                left: 100%;
+            }
+        }
     }
 `;
 
-export const Animation = styled.div`
-    background: white;
-    width: 490px;
-    border-radius: 20px;
-    transform: scaleX(-1);
-    position: absolute;
-    top: 10px;
-    right: 56px;
-    z-index: -2;
-    box-shadow: rgba(240, 46, 170, 0.4) 0px -0px, rgba(240, 46, 170, 0.3) 0px 0px, rgba(240, 46, 170, 0.2) 0px 5px, rgba(240, 46, 170, 0.1) 0px 10px, rgba(240, 46, 170, 0.05) 0px 15px;
+export const AnimationCard = styled.div`
+    display: none;
+    @media (min-width: 768px) {
+        display: block;
+        background-color: #fff;
+        transform: scaleX(-1);
+        width: min(50vw, 600px);
+        position: absolute;
+        right: 3.5rem;
+        border-radius: 50px;
+    }
 `;
