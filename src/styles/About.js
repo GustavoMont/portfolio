@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 
 export const Grid = styled.div`
-    max-height: 90vh;
     display: grid;
     grid-template-columns: 46% 1fr;
     grid-template-rows: repeat(2, 1fr);
@@ -15,6 +14,7 @@ export const Grid = styled.div`
         grid-column: 1/2;
         text-align: justify;
         transition: 1s ease all;
+        cursor: default;
         &:hover{
             transform: scale(1);
         }
@@ -32,5 +32,11 @@ export const Grid = styled.div`
         grid-column: 2/3;
         grid-row: 1/3;
         align-self: center;
+        width: 70%;
+        justify-self: center;
+    }
+    @media(max-width: 576px){
+        display: flex;
+        flex-direction: column;
     }
 `
