@@ -24,11 +24,15 @@ const blink = keyframes`
 // --light-purple: #6f36bc;
 
 export const Card = styled.div`
+    @media(min-width: 768px) {
+        margin: 0;
+    }
     border-radius: 8px;
-    position: absolute;
     width: 95vw;
+    position: absolute;
     top: 50%;
     left: 50%;
+    margin: 1rem 0;
     transform: translate(-50%, -50%);
     p{
         font-weight: 100;
@@ -74,14 +78,13 @@ export const Card = styled.div`
 `;
 
 export const AnimationCard = styled.div`
-    display: none;
+    background-color: #fff;
+    transform: scaleX(-1);
+    border-radius: 50px;
     @media (min-width: 768px) {
         display: block;
-        background-color: #fff;
-        transform: scaleX(-1);
         width: min(50vw, 600px);
         position: absolute;
         right: 3.5rem;
-        border-radius: 50px;
     }
 `;

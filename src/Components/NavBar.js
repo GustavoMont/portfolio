@@ -4,13 +4,13 @@ import { handleBgColor, smoothScroll } from "../utils/scroll"
 
 
 export default function NavBar() {
-    const sectionLinks = ["Sobre mim", "Habilidades", "Trabalhos", "Conhecimentos", "Contato"]
+    const sectionLinks = ["Sobre mim", "O que faço", "Trabalhos", "Conhecimentos", "Contato"]
     const [open, setOpen] = useState(false)
     useEffect(() => {
         document.body.style.overflow = open ? 'hidden' : "auto"
     }, [open])
     return (
-        <Menu className={`${open && 'bg-active'}`} >
+        <Menu className={`${open ? 'bg-active' : null}`} >
             <Logo>
                 <a href="#home" onClick={smoothScroll} >
                     <span data-text="Gustavo">Gustavo</span>
@@ -24,7 +24,7 @@ export default function NavBar() {
                 {sectionLinks.map(link => (
                     <li key={link} >
                         <a
-                            href={`#${link.toLowerCase().replace(" ", "-")}`}
+                            href={`#${link.toLowerCase().replace(/\s+/g, '-').replace('ç', 'c')}`}
                             onClick={(e) => {
                                 setOpen(false)
                                 smoothScroll(e)

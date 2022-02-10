@@ -4,7 +4,7 @@ import NavBar from '../src/Components/NavBar'
 import Apresentation from '../src/Sections/Apresentation';
 import { handleBgColor } from '../src/utils/scroll'
 import About from '../src/Sections/About'
-import Habilidades from '../src/Sections/Habilidades'
+import Faco from '../src/../src/Sections/Faco';
 import Trabalhos from '../src/Sections/Trabalhos'
 import Conhecimentos from '../src/Sections/Conhecimentos'
 import Contato from '../src/Sections/Contato'
@@ -24,7 +24,7 @@ export default function Home() {
       <NavBar />
       <Apresentation />
       <About />
-      <Habilidades />
+      <Faco />
       <Trabalhos />
       <Conhecimentos />
       <Contato />
