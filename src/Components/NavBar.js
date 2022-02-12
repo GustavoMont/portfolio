@@ -3,8 +3,7 @@ import { Logo, Menu } from "../styles/Menu"
 import { handleBgColor, smoothScroll } from "../utils/scroll"
 
 
-export default function NavBar() {
-    const sectionLinks = ["Sobre mim", "O que faço", "Trabalhos", "Conhecimentos", "Contato"]
+export default function NavBar( { options } ) {
     const [open, setOpen] = useState(false)
     useEffect(() => {
         document.body.style.overflow = open ? 'hidden' : "auto"
@@ -21,15 +20,15 @@ export default function NavBar() {
                 <span className="bar"></span>
             </div>
             <ul className={open ? 'active' : undefined}>
-                {sectionLinks.map(link => (
-                    <li key={link} >
+                {options.map(option => (
+                    <li key={option} >
                         <a
-                            href={`#${link.toLowerCase().replace(/\s+/g, '-').replace('ç', 'c')}`}
+                            href={`#${option.toLowerCase().replace(/\s+/g, '-').replace('ç', 'c')}`}
                             onClick={(e) => {
                                 setOpen(false)
                                 smoothScroll(e)
                             }}
-                        >{link}</a>
+                        >{option}</a>
                     </li>
                 ))}
             </ul>
