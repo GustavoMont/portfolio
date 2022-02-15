@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     }
     :root{
         --dark-purple: #36174d;
+        --dark-purple-50: rgba(54,23,77, 0.5);
         --pink: #ff4778;
         --pink-50: rgba(255,71,120, 0.5);
         --white: #f3effe;
