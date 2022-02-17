@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AnimationCard, Card } from "../../styles/Apresentation";
 import Section from "../../styles/Section";
 import Lottie from "react-lottie-player";
-import devAnimation from "./dev-animation.json";
+import devAnimation from "../../Animations/dev-animation.json";
 
 export default function Apresentation() {
   const [vel, setVel] = useState(1);
