@@ -1,12 +1,12 @@
 import Section from "../../styles/Section";
 import { ListaServicos, Servico } from "../../styles/Faco";
 
-export default function Faco() {
+export default function Faco({content}) {
   return (
     <Section id="o-que-faco">
       <h2>Serviços</h2>
       <ListaServicos>
-        <li>
+        {/* <li>
           <Servico>
             <div className="header">
               <h3>UI Design</h3>
@@ -65,7 +65,23 @@ export default function Faco() {
               </p>
             </div>
           </Servico>
-        </li>
+        </li> */}
+          {content.map(servico =>(
+            <li key={servico.id}>
+              <Servico>
+              <div className="header">
+                <h3>{servico.title}</h3>
+              </div>
+
+              <hr />
+              <div className="explain">
+                <p>
+                  {servico.description}
+                </p>
+              </div>
+            </Servico>
+            </li>
+          ))}
       </ListaServicos>
     </Section>
   );

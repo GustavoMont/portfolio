@@ -1,20 +1,24 @@
-import React, { useEffect } from 'react'
-import Head from 'next/head'
-import NavBar from '../src/Components/NavBar'
-import Apresentation from '../src/Sections/Apresentation';
-import { handleBgColor } from '../src/utils/scroll'
-import About from '../src/Sections/About'
-import Faco from '../src/../src/Sections/Faco';
-import Trabalhos from '../src/Sections/Trabalhos'
-import Conhecimentos from '../src/Sections/Conhecimentos'
-import Contato from '../src/Sections/Contato'
-import GlobalStyle from '../src/styles/GlobalStyle'
+import React, { useEffect } from "react";
+import Head from "next/head";
+import NavBar from "../src/Components/NavBar";
+import Apresentation from "../src/Sections/Apresentation";
+import { handleBgColor } from "../src/utils/scroll";
+import About from "../src/Sections/About";
+import Faco from "../src/../src/Sections/Faco";
+import Trabalhos from "../src/Sections/Trabalhos";
+import Conhecimentos from "../src/Sections/Conhecimentos";
+import Contato from "../src/Sections/Contato";
+import GlobalStyle from "../src/styles/GlobalStyle";
 
-export default function Home() {
+export default function Home({about, servicos}) {
   useEffect(() => {
-    window.onscroll = handleBgColor
-  }, [])
-  const sectionLinks = ["Sobre mim", "O que faço", /*"Trabalhos", "Conhecimentos",*/ "Contato"]
+    window.onscroll = handleBgColor;
+  }, []);
+  const sectionLinks = [
+    "Sobre mim",
+    "O que faço",
+    /*"Trabalhos", "Conhecimentos",*/ "Contato",
+  ];
   return (
     <>
       <Head>
@@ -24,11 +28,38 @@ export default function Home() {
       <GlobalStyle />
       <NavBar options={sectionLinks} />
       <Apresentation />
-      <About />
-      <Faco />
+      <About  content={about} />
+      <Faco content={servicos} />
       {/* <Trabalhos /> */}
       {/* <Conhecimentos /> */}
       <Contato />
     </>
-  )
+  );
+}
+export async function getStaticProps() {
+
+const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
+const resContent = await fetch(
+  'https://graphql.datocms.com/',
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      query: `{ about { sou, estudo }, allServices {
+        id,
+        title,
+        description
+      } }`
+    }),
+  }
+)
+const resContentJson = await resContent.json()
+const { about, ['allServices']: servicos } = resContentJson.data
+   return {
+    props: { about, servicos },
+  };
 }
