@@ -1,5 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
-
+import styled, { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     *{
@@ -27,6 +26,16 @@ const GlobalStyle = createGlobalStyle`
         /* background-image: linear-gradient( 90deg,  rgba(118,12,99,1) 11.2%, rgba(71,11,75,1) 98.6% ); */
         background: var(--dark-purple);
     } 
-`
+`;
+
+export const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
 
 export default GlobalStyle;

@@ -9,15 +9,17 @@ import Trabalhos from "../src/Sections/Trabalhos";
 import Conhecimentos from "../src/Sections/Conhecimentos";
 import Contato from "../src/Sections/Contato";
 import GlobalStyle from "../src/styles/GlobalStyle";
+import currency from "../public/currency-converter.gif";
 
-export default function Home({about, servicos}) {
+export default function Home({ about, servicos, projetos }) {
   useEffect(() => {
     window.onscroll = handleBgColor;
   }, []);
   const sectionLinks = [
     "Sobre mim",
     "O que faço",
-    /*"Trabalhos", "Conhecimentos",*/ "Contato",
+    "Trabalhos",
+    /*"Conhecimentos",*/ "Contato",
   ];
   return (
     <>
@@ -28,38 +30,52 @@ export default function Home({about, servicos}) {
       <GlobalStyle />
       <NavBar options={sectionLinks} />
       <Apresentation />
-      <About  content={about} />
+      <About content={about} />
       <Faco content={servicos} />
-      {/* <Trabalhos /> */}
+      <Trabalhos content={projetos} />
       {/* <Conhecimentos /> */}
       <Contato />
     </>
   );
 }
 export async function getStaticProps() {
-
-const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
-const resContent = await fetch(
-  'https://graphql.datocms.com/',
-  {
-    method: 'POST',
+  const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
+  const resContent = await fetch("https://graphql.datocms.com/", {
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-      'Authorization': `Bearer ${token}`,
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      query: `{ about { sou, estudo }, allServices {
-        id,
-        title,
-        description
-      } }`
+      query: `{ 
+        about { sou, estudo }, 
+        allServices {
+          id,
+          title,
+          description
+        },
+        allProjects{
+          thumbnail{
+            url,
+            title
+          }
+          id,
+          title,
+          description,
+          repoLink,
+          linkProducao
+        }
+     }`,
     }),
-  }
-)
-const resContentJson = await resContent.json()
-const { about, ['allServices']: servicos } = resContentJson.data
-   return {
-    props: { about, servicos },
+  });
+  const resContentJson = await resContent.json();
+  const {
+    about,
+    ["allServices"]: servicos,
+    ["allProjects"]: projetos,
+  } = resContentJson.data;
+  return {
+    props: { about, servicos, projetos },
   };
 }
