@@ -9,7 +9,6 @@ import Trabalhos from "../src/Sections/Trabalhos";
 import Conhecimentos from "../src/Sections/Conhecimentos";
 import Contato from "../src/Sections/Contato";
 import GlobalStyle from "../src/styles/GlobalStyle";
-import currency from "../public/currency-converter.gif";
 
 export default function Home({ about, servicos, projetos }) {
   useEffect(() => {
