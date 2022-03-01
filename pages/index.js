@@ -54,7 +54,9 @@ export async function getStaticProps() {
           title,
           description
         },
-        allProjects{
+        allProjects(
+          orderBy: [createdAt_ASC]
+        ){
           thumbnail{
             url,
             title

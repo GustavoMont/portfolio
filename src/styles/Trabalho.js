@@ -5,8 +5,9 @@ export const Screen = styled.div`
   --base: #191919;
   border: 5px solid var(--screen-border);
   border-radius: 5px;
-  width: min(100%, 350px);
+  width: 240px;
   height: 140px;
+  margin: 0 auto;
   position: relative;
   background-color: #050505;
   &::before {
@@ -43,9 +44,13 @@ export const Screen = styled.div`
       width: 100%;
     }
   }
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
+    height: 150px;
+    width: 220px;
+  }
+  @media (min-width: 900px) {
     height: 175px;
-    margin: 0 auto;
+    width: 350px;
   }
 `;
 
@@ -58,7 +63,10 @@ export const Project = styled.div`
   z-index: 9;
   @media (min-width: 768px) {
     margin: 1rem 0;
-    width: 380px;
+    width: 300px;
+  }
+  @media (min-width: 900px) {
+    width: 370px;
   }
 `;
 export const Info = styled.article`
@@ -77,6 +85,16 @@ export const Info = styled.article`
   }
   hr {
     margin: 0.6rem 0;
+  }
+  p {
+    @media (min-width: 768px) {
+      height: 145px;
+      margin-bottom: 1.8rem;
+    }
+    @media (min-width: 900px) {
+      height: 120px;
+      margin-bottom: 1.8rem;
+    }
   }
 `;
 export const ProjectBtn = styled.a`
