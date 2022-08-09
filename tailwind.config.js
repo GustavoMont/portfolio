@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -19,6 +16,28 @@ module.exports = {
         "light-white": "#FDFDFD",
         white: "#FCFCFC",
         "dark-white": "#C9C9C9",
+      },
+      fontSize: {
+        caption: "0.75rem",
+        button: "0.875rem",
+        subtitle: "0.9375rem",
+        text: "1rem",
+        "heading-5": "1.4375rem",
+        "heading-4": "2.0625rem",
+        "heading-3": "2.875rem",
+        "heading-2": "3.625rem",
+      },
+      fontFamily: {
+        poppins: "Poppins, sans-serif",
+        roboto: "Roboto, sans-serif",
+      },
+      letterSpacing: {
+        caption: "0.4px",
+        subtitle: "0.15px",
+        button: "1.25px",
+        text: "0.5px",
+        "heading-4": "0.25px",
+        "heading-2": "-0.5px",
       },
     },
   },

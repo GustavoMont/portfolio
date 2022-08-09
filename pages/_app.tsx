@@ -1,6 +1,7 @@
-import '../src/styles/_app.css'
+import "src/styles/_app.css";
+
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
