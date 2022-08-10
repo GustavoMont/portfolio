@@ -7,5 +7,7 @@
 
 :root {
   --dark-black: theme("colors.dark-black");
+  --secondary: theme("colors.secondary");
+  --primary: theme("colors.primary");
   --white: theme("colors.white");
 }

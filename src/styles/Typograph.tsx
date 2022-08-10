@@ -1,6 +1,8 @@
+import React from "react";
+
 interface Heading {
   className?: string;
-  text: string;
+  children: any;
   weight?: "font-bold" | "font-light";
 }
 
@@ -10,8 +12,28 @@ export const H5 = (props: Heading) => (
       props.className || ""
     }`}
   >
-    {props.text}
+    {props.children}
   </h5>
+);
+
+export const ButtonText = (props: Heading) => (
+  <p
+    className={`text-button tracking-button ${
+      props.weight || "font-medium"
+    } font-roboto ${props.className || ""}`}
+  >
+    {props.children}
+  </p>
+);
+
+export const Subtitle = (props: Heading) => (
+  <p
+    className={`text-subtitle tracking-subtitle ${
+      props.weight || "font-normal"
+    } font-poppins ${props.className || ""}`}
+  >
+    {props.children}
+  </p>
 );
 
 // export const H3 = styled.h3`

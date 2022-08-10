@@ -11,17 +11,22 @@ const Navbar = styled.nav`
   height: 3rem;
 `;
 
+interface MobileMenu {
+  active: boolean;
+}
+
 export default Navbar;
 
-export const MobileMenu = styled.div`
+export const MobileMenu = styled.div<MobileMenu>`
   height: 100vh;
   width: 74vw;
   position: absolute;
   top: 0;
-  right: ${(props) => (props.theme.activeMobileMenu ? 0 : "100%")};
+  right: ${(props) => (props.active ? "0" : "-100%")};
   display: flex;
   flex-direction: column;
   padding-left: 1.5rem;
+  transition: 0.5s ease-in-out all;
   #close {
     display: flex;
     justify-content: end;

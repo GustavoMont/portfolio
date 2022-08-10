@@ -6,6 +6,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
+  a{
+    text-decoration: none;
+    color: inherit;
+  };
+  body{
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--dark-black);
+  }
 `;
 
 export default GlobalStyle;

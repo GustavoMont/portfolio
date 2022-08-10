@@ -1,37 +1,49 @@
 import React, { useState } from "react";
 import GridContainer from "src/styles/common/GridContainer";
+import Logo from "src/styles/Logo";
 import Navbar, { MobileMenu } from "src/styles/Navbar";
 import { H5 } from "src/styles/Typograph";
 import { CloseIcon, Hamburger } from "../icons";
 
+interface Options {
+  href: string;
+  title: string;
+}
+
 export default function Menu() {
   const [activeMobileMenu, setActiveMobileMenu] = useState<boolean>(false);
-  const options = ["Coiso1", "Coiso2", "Coiso3"];
+  const options: Options[] = [
+    { href: "#quem-sou", title: "Quem sou" },
+    { href: "#o-que-faco", title: "O que faço" },
+    { href: "#portfolio", title: "Portfolio" },
+    { href: "#contatos", title: "Contatos" },
+  ];
   return (
     <>
-      <Navbar className="text-white bg-primary">
-        <GridContainer>
-          <H5 className="" weight="font-bold" text="GM" />
-          <div
-            className="col-start-3 justify-self-end"
-            onClick={() => setActiveMobileMenu(true)}
-          >
-            <Hamburger size={6} />
-          </div>
-        </GridContainer>
-      </Navbar>
-      <MobileMenu
-        className="bg-primary text-white"
-        theme={{ activeMobileMenu }}
-        onClick={() => setActiveMobileMenu(false)}
-      >
-        <div id="close">
+      <header>
+        <Navbar className="text-white bg-dark-black">
+          <GridContainer>
+            <Logo>
+              <span data-text="Gustavo">Gustavo</span>
+              <span data-text="Monteiro">Monteiro</span>
+            </Logo>
+            <div
+              className="col-start-3 justify-self-end self-center "
+              onClick={() => setActiveMobileMenu(true)}
+            >
+              <Hamburger size={6} />
+            </div>
+          </GridContainer>
+        </Navbar>
+      </header>
+      <MobileMenu className="bg-primary text-white" active={activeMobileMenu}>
+        <div id="close" onClick={() => setActiveMobileMenu(false)}>
           <CloseIcon size={6} />
         </div>
         <ul>
           {options.map((option, i) => (
             <li key={i}>
-              <H5 text={option} />
+              <H5>{option.title}</H5>
             </li>
           ))}
         </ul>
