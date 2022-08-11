@@ -18,6 +18,12 @@ export default function Menu() {
     { href: "#portfolio", title: "Portfolio" },
     { href: "#contatos", title: "Contatos" },
   ];
+  function closeMenu() {
+    setActiveMobileMenu(false);
+  }
+  function openMenu() {
+    setActiveMobileMenu(true);
+  }
   return (
     <>
       <header>
@@ -27,17 +33,14 @@ export default function Menu() {
               <span data-text="Gustavo">Gustavo</span>
               <span data-text="Monteiro">Monteiro</span>
             </Logo>
-            <div
-              className="col-start-3 justify-self-end self-center "
-              onClick={() => setActiveMobileMenu(true)}
-            >
+            <div className="col-start-4 self-center" onClick={openMenu}>
               <Hamburger size={6} />
             </div>
           </GridContainer>
         </Navbar>
       </header>
       <MobileMenu className="bg-primary text-white" active={activeMobileMenu}>
-        <div id="close" onClick={() => setActiveMobileMenu(false)}>
+        <div id="close" onClick={closeMenu}>
           <CloseIcon size={6} />
         </div>
         <ul>
