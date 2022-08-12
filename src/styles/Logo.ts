@@ -6,6 +6,9 @@ const Logo = styled.h1`
   font-weight: bold;
   width: fit-content;
   height: 100%;
+  @media (min-width: 768px) {
+    font-size: 46px;
+  }
   span {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -26,6 +29,12 @@ const Logo = styled.h1`
       z-index: -1;
       left: 0;
       top: 1px;
+    }
+    @media (min-width: 768px) {
+      width: 38px;
+      &::after {
+        top: 3px;
+      }
     }
   }
 `;

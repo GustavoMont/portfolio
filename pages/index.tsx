@@ -4,6 +4,7 @@ import GlobalStyle from "../src/styles/GlobalStyle";
 import Menu from "src/components/common/Menu";
 import Layout from "src/styles/common/Layout";
 import Apresentation from "src/sections/Apresentation";
+import WhoAmI from "src/sections/WhoAmI";
 
 export default function Home() {
   const a = 1;
@@ -16,6 +17,7 @@ export default function Home() {
       <GlobalStyle />
       <Menu />
       <Apresentation />
+      <WhoAmI />
     </>
   );
 }

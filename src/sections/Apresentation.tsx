@@ -9,13 +9,15 @@ import ManImage from "/public/man-sit-desk.svg";
 
 export default function Apresentation() {
   return (
-    <Layout>
-      <GridContainer>
-        <div className="col-start-1 col-end-4 w-full mt-11">
-          <H5>
+    <Layout className="flex items-center">
+      <GridContainer className="items-center">
+        <div className="col-start-1 col-end-4 w-full mt-11 md:col-start-1 md:col-end-7">
+          <H5 className="md:text-heading-4 md:tracking-heading-2 md:font-light">
             Olá, Sou o<span className="text-primary"> Gustavo</span>
           </H5>
-          <Subtitle>Desenvolvedor Web</Subtitle>
+          <Subtitle className="md:text-heading-5 md:tracking-heading-4">
+            Desenvolvedor Web
+          </Subtitle>
           <div className="flex justify-center">
             <Button
               border="fill"
@@ -23,18 +25,20 @@ export default function Apresentation() {
               rounded="pill"
               className="mt-9"
             >
-              <ButtonText className="leading-none">Contate-me</ButtonText>
+              <ButtonText className="leading-none md:text-subtitle md:font-poppins">
+                Contate-me
+              </ButtonText>
             </Button>
           </div>
         </div>
-        <div className="col-start-1 col-end-4 mt-10">
+        <div className="col-start-1 col-end-4 mt-10 md:mt-0 md:col-start-8 md:col-end-13">
           <img
             src={"man-sit-desk.svg"}
             alt="Main Image"
             className="w-10/12 mx-auto"
           />
         </div>
-        <div className="col-start-1 col-end-4 w-full mt-4 text-white flex justify-center gap-6">
+        <div className="col-start-1 col-end-4 w-full text-white flex justify-center gap-6 md:col-start-1 md:col-end-7">
           <LinkedinIcon />
           <GmailIcon />
         </div>

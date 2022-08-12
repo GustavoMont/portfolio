@@ -9,6 +9,9 @@ const Navbar = styled.nav`
   left: 0;
   width: 100%;
   height: 3rem;
+  @media (min-width: 768px) {
+    height: 4rem;
+  }
 `;
 
 interface MobileMenu {

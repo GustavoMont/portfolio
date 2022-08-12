@@ -14,7 +14,17 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     overflow-x: hidden;
     background-color: var(--dark-black);
+    font-family: 'Poppins', sans-serif;
   }
+  body::-webkit-scrollbar {
+  width: .5rem;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 99px;
+
+}
 `;
 
 export default GlobalStyle;

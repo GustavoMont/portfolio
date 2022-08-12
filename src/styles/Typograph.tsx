@@ -2,7 +2,7 @@ import React from "react";
 
 interface Heading {
   className?: string;
-  children: any;
+  children: React.ReactNode;
   weight?: "font-bold" | "font-light";
 }
 
