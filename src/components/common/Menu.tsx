@@ -43,7 +43,7 @@ export default function Menu() {
     return (
       <li key={i}>
         <Link href={option.href} passHref>
-          <a>
+          <a onClick={closeMenu}>
             <H5 className="md:text-subtitle">{option.title}</H5>
           </a>
         </Link>
@@ -56,10 +56,12 @@ export default function Menu() {
       <header>
         <Navbar className="text-white bg-dark-black">
           <GridContainer>
-            <Logo className="col-span-3">
-              <span data-text="Gustavo">Gustavo</span>
-              <span data-text="Monteiro">Monteiro</span>
-            </Logo>
+            <Link href={"/"} passHref>
+              <Logo className="col-span-3">
+                <span data-text="Gustavo">Gustavo</span>
+                <span data-text="Monteiro">Monteiro</span>
+              </Logo>
+            </Link>
             <div
               className="col-start-4 self-center w-6 md:hidden"
               onClick={openMenu}

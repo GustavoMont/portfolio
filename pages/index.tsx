@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import Head from "next/head";
 import GlobalStyle from "../src/styles/GlobalStyle";
 import Menu from "src/components/common/Menu";
-import Layout from "src/styles/common/Layout";
+import Aos from "aos";
 import Apresentation from "src/sections/Apresentation";
 import WhoAmI from "src/sections/WhoAmI";
 
 export default function Home() {
-  const a = 1;
+  useEffect(() => {
+    Aos.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       <Head>

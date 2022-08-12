@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Layout = styled.section`
-  padding-top: 3rem;
+  padding-top: 3.5rem;
   padding-bottom: 1rem;
   min-height: 100vh;
   color: var(--white);

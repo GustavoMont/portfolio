@@ -23,7 +23,7 @@ export default Navbar;
 export const MobileMenu = styled.div<MobileMenu>`
   height: 100vh;
   width: 74vw;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: ${(props) => (props.active ? "0" : "-100%")};
   display: flex;

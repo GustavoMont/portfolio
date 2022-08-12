@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: inherit;
   };
+  html{
+    scroll-behavior: smooth;
+  }
   body{
     position: relative;
     overflow-x: hidden;

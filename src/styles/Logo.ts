@@ -6,6 +6,7 @@ const Logo = styled.h1`
   font-weight: bold;
   width: fit-content;
   height: 100%;
+  cursor: pointer;
   @media (min-width: 768px) {
     font-size: 46px;
   }

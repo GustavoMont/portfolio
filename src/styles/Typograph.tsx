@@ -16,21 +16,31 @@ export const H5 = (props: Heading) => (
   </h5>
 );
 
-export const ButtonText = (props: Heading) => (
-  <p
-    className={`text-button tracking-button ${
-      props.weight || "font-medium"
-    } font-roboto ${props.className || ""}`}
-  >
-    {props.children}
-  </p>
-);
-
 export const Subtitle = (props: Heading) => (
   <p
     className={`text-subtitle tracking-subtitle ${
       props.weight || "font-normal"
     } font-poppins ${props.className || ""}`}
+  >
+    {props.children}
+  </p>
+);
+
+export const Caption = (props: Heading) => (
+  <p
+    className={`text-caption tracking-caption font-roboto ${
+      props.weight || "font-normal"
+    } font-poppins ${props.className || ""}`}
+  >
+    {props.children}
+  </p>
+);
+
+export const ButtonText = (props: Heading) => (
+  <p
+    className={`text-button tracking-button ${
+      props.weight || "font-medium"
+    } font-roboto ${props.className || ""}`}
   >
     {props.children}
   </p>
