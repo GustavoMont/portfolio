@@ -7,6 +7,7 @@ import "aos/dist/aos.css";
 import Apresentation from "src/sections/Apresentation";
 import WhoAmI from "src/sections/WhoAmI";
 import WhatIDo from "src/sections/WhatIDo";
+import Portfolio from "src/sections/Portfolio";
 
 export default function Home() {
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function Home() {
       <Apresentation />
       <WhoAmI />
       <WhatIDo />
+      <Portfolio />
     </>
   );
 }
