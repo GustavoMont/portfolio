@@ -9,6 +9,7 @@ const Navbar = styled.nav`
   left: 0;
   width: 100%;
   height: 3rem;
+  z-index: 99;
   @media (min-width: 768px) {
     height: 4rem;
   }
@@ -30,6 +31,8 @@ export const MobileMenu = styled.div<MobileMenu>`
   flex-direction: column;
   padding-left: 1.5rem;
   transition: 0.5s ease-in-out all;
+  z-index: 99;
+
   #close {
     display: flex;
     justify-content: end;

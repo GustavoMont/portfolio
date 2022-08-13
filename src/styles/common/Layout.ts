@@ -7,6 +7,7 @@ const Layout = styled.section`
   color: var(--white);
   @media (min-width: 768px) {
     padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 `;
 

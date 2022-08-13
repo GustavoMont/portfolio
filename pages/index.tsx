@@ -3,12 +3,14 @@ import Head from "next/head";
 import GlobalStyle from "../src/styles/GlobalStyle";
 import Menu from "src/components/common/Menu";
 import Aos from "aos";
+import "aos/dist/aos.css";
 import Apresentation from "src/sections/Apresentation";
 import WhoAmI from "src/sections/WhoAmI";
+import WhatIDo from "src/sections/WhatIDo";
 
 export default function Home() {
   useEffect(() => {
-    Aos.init({ duration: 800 });
+    Aos.init({ duration: 1900 });
   }, []);
 
   return (
@@ -21,6 +23,7 @@ export default function Home() {
       <Menu />
       <Apresentation />
       <WhoAmI />
+      <WhatIDo />
     </>
   );
 }

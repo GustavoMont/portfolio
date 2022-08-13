@@ -12,12 +12,18 @@ export default function Apresentation() {
     <Layout className="flex items-center">
       <GridContainer className="items-center">
         <div className="col-start-1 col-end-4 w-full mt-11 md:col-start-1 md:col-end-7">
-          <H5 className="md:text-heading-4 md:tracking-heading-2 md:font-light">
-            Olá, Sou o<span className="text-primary"> Gustavo</span>
-          </H5>
-          <Subtitle className="md:text-heading-5 md:tracking-heading-4">
-            Desenvolvedor Web
-          </Subtitle>
+          <div data-aos="fade-up">
+            <H5 className="md:text-heading-4 md:tracking-heading-2 md:font-light">
+              Olá, Sou o<span className="text-primary"> Gustavo</span>
+            </H5>
+          </div>
+          <div>
+            <div data-aos="fade-left">
+              <Subtitle className="md:text-heading-5 md:tracking-heading-4">
+                Desenvolvedor Web
+              </Subtitle>
+            </div>
+          </div>
           <div className="flex justify-center">
             <Button
               border="fill"
@@ -33,6 +39,7 @@ export default function Apresentation() {
         </div>
         <div className="col-start-1 col-end-4 mt-10 md:mt-0 md:col-start-8 md:col-end-13">
           <img
+            data-aos="fade-right"
             src={"man-sit-desk.svg"}
             alt="Main Image"
             className="w-10/12 mx-auto"
