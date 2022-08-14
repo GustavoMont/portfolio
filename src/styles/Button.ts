@@ -15,6 +15,10 @@ const Button = styled.button<ButtonProps>`
     props.border === "fill" ? "none" : `var(--${props.color}) 1px solid`};
   color: ${(props) =>
     props.border === "outlined" ? `var(--${props.color})` : "var(--white)"};
+  transition: all 0.5s ease;
+  :hover {
+    opacity: 0.8;
+  }
 `;
 
 export default Button;

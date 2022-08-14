@@ -11,6 +11,7 @@ export default function InputText(props: InputTextProps) {
     <div className="flex flex-col w-full">
       <label htmlFor={props.name}>{props.label}</label>
       <Input
+        required={props.required}
         className="text-black"
         onChange={props.onChange}
         value={props.value}

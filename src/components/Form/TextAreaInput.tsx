@@ -6,7 +6,12 @@ export default function TextAreaInput(props: Input) {
   return (
     <div className="flex flex-col">
       <label htmlFor={props.name}>{props.label}</label>
-      <TextArea value={props.value} onChange={props.onChange}></TextArea>
+      <TextArea
+        className="text-black"
+        value={props.value}
+        onChange={props.onChange}
+        name={props.name}
+      ></TextArea>
     </div>
   );
 }
