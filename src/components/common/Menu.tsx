@@ -17,7 +17,7 @@ export default function Menu() {
   const options: Options[] = [
     { href: "#quem-sou", title: "Quem sou" },
     { href: "#o-que-faco", title: "O que faço" },
-    { href: "#portfolio", title: "Portfolio" },
+    // { href: "#portfolio", title: "Portfolio" },
     { href: "#contatos", title: "Contatos" },
   ];
   function closeMenu() {

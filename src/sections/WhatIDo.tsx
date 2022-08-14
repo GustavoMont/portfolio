@@ -24,7 +24,7 @@ export default function WhatIDo() {
   ];
 
   function renderCard(service: Service, i: number) {
-    return <ServicesCard {...service} key={i} />;
+    return <ServicesCard {...service} key={i} isOdd={i % 2 === 0} />;
   }
 
   return (
@@ -33,7 +33,7 @@ export default function WhatIDo() {
         <div className="col-start-1 col-span-3 mt-4 md:col-span-5">
           <H5 className="text-primary md:text-heading-3">O que faço</H5>
         </div>
-        <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-10">
+        <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-11">
           <FlexContainer className="md:py-20">
             {servicesCard.map(renderCard)}
           </FlexContainer>

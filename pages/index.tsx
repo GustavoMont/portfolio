@@ -8,6 +8,7 @@ import Apresentation from "src/sections/Apresentation";
 import WhoAmI from "src/sections/WhoAmI";
 import WhatIDo from "src/sections/WhatIDo";
 import Portfolio from "src/sections/Portfolio";
+import Contact from "src/sections/Contact";
 
 export default function Home() {
   useEffect(() => {
@@ -25,7 +26,8 @@ export default function Home() {
       <Apresentation />
       <WhoAmI />
       <WhatIDo />
-      <Portfolio />
+      {/* <Portfolio /> */}
+      <Contact />
     </>
   );
 }
