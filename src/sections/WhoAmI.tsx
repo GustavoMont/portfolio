@@ -6,7 +6,7 @@ import { Caption, H5 } from "src/styles/Typograph";
 
 export default function WhoAmI() {
   return (
-    <Layout id="quem-sou" className="flex items-center" fullHeight>
+    <Layout id="quem-sou" className="flex items-center">
       <GridContainer className="h-full items-center">
         <div className="col-start-1 col-span-3  md:col-span-5">
           <img
