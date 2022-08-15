@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from "next/router";
 import React from "react";
 import { GmailIcon, LinkedinIcon } from "src/components/icons";
 import Button from "src/styles/Button";
@@ -8,6 +9,7 @@ import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
 import ManImage from "/public/man-sit-desk.svg";
 
 export default function Apresentation() {
+  const router = useRouter();
   return (
     <Layout className="flex items-center">
       <GridContainer className="items-center">
@@ -30,6 +32,7 @@ export default function Apresentation() {
               color="primary"
               rounded="pill"
               className="mt-9"
+              onClick={() => router.push("#contatos")}
             >
               <ButtonText className="leading-none md:text-subtitle md:font-poppins">
                 Contate-me

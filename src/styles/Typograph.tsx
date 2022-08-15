@@ -46,9 +46,12 @@ export const ButtonText = (props: Heading) => (
   </p>
 );
 
-// export const H3 = styled.h3`
-//   font-size: 2.875rem;
-//   letter-spacing: 0px;
-//   font-weight: normal;
-//   font-family: "Poppins", sans-serif;
-// `;
+export const BodyText = (props: Heading) => (
+  <p
+    className={`text-text tracking-text ${
+      props.weight || "font-normal"
+    } font-roboto ${props.className || ""}`}
+  >
+    {props.children}
+  </p>
+);

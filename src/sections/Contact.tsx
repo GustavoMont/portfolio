@@ -4,7 +4,8 @@ import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import { ButtonText, H5 } from "src/styles/Typograph";
+import Spin from "src/components/Spin";
+import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
 
 export default function Contact() {
   const INITIAL_FORMDATA = {
@@ -14,7 +15,12 @@ export default function Contact() {
     message: "",
   };
   const [formData, setFormData] = useState(INITIAL_FORMDATA);
-
+  const [isLoading, setIsLoading] = useState(false);
+  const [feedBack, setFeedBack] = useState({
+    message: "Sue mensagem foi enviada!! Já te respondo!!!!",
+    isError: false,
+    visible: false,
+  });
   function resetForm() {
     setFormData(INITIAL_FORMDATA);
   }
@@ -31,6 +37,7 @@ export default function Contact() {
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
+      setIsLoading(true);
       await fetch(e.currentTarget.action, {
         method: e.currentTarget.method,
         headers: {
@@ -44,15 +51,23 @@ export default function Contact() {
         }),
       }).then((res) => res.status);
       resetForm();
-      alert("Opaaa!Já retorno sua mensagem :)");
+      setFeedBack({
+        ...feedBack,
+        visible: true,
+      });
     } catch (error) {
-      alert("Putz! Ocorreu um erro ao enviar sua mensagem");
+      setFeedBack({
+        isError: true,
+        message: "Putz ocorreu um erro ao enviar a mensagem",
+        visible: true,
+      });
     }
+    setIsLoading(false);
   }
 
   return (
-    <Layout id="contatos" isNotScreenHeight>
-      <GridContainer className="md:h-screen items-center">
+    <Layout id="contatos">
+      <GridContainer className="items-center">
         <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-11 flex flex-col items-center gap-6">
           <div data-aos="fade-right">
             <H5 className="text-primary md:text-heading-4 md:tracking-heading-4">
@@ -63,10 +78,21 @@ export default function Contact() {
             <form
               action="https://formsubmit.co/lgmluisgm@gmail.com"
               method="POST"
-              className="flex flex-col gap-y-4 w-full"
+              className="flex flex-col gap-4 w-full"
               data-aos="fade-up"
               onSubmit={onSubmit}
             >
+              {feedBack.visible && (
+                <div
+                  className={`${
+                    feedBack.isError ? "text-dark-secondary" : "text-green-500"
+                  }`}
+                >
+                  <BodyText className="text-center">
+                    {feedBack.message}
+                  </BodyText>
+                </div>
+              )}
               <div className="flex flex-col gap-4 md:flex-row">
                 <InputText
                   required
@@ -99,8 +125,16 @@ export default function Contact() {
                 onChange={changeValue}
                 value={formData.message}
               />
-              <Button border="fill" color="primary" rounded="default">
-                <ButtonText>Enviar mensagem</ButtonText>
+              <Button
+                border="fill"
+                color="primary"
+                rounded="default"
+                disabled={isLoading}
+              >
+                <div className="flex gap-4 items-center justify-center">
+                  {isLoading && <Spin />}
+                  <ButtonText>Enviar mensagem</ButtonText>
+                </div>
               </Button>
             </form>
           </div>
