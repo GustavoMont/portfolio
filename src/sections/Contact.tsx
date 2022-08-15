@@ -6,6 +6,8 @@ import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import Spin from "src/components/Spin";
 import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
+import Linkedin from "src/components/SocialMedia/Linkedin";
+import Gmail from "src/components/SocialMedia/Gmail";
 
 export default function Contact() {
   const INITIAL_FORMDATA = {
@@ -137,6 +139,10 @@ export default function Contact() {
                 </div>
               </Button>
             </form>
+          </div>
+          <div className=" flex gap-6">
+            <Linkedin />
+            <Gmail />
           </div>
         </div>
       </GridContainer>

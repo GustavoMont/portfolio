@@ -1,7 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { GmailIcon, LinkedinIcon } from "src/components/icons";
+import Gmail from "src/components/SocialMedia/Gmail";
+import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
@@ -45,12 +48,12 @@ export default function Apresentation() {
             data-aos="fade-right"
             src={"man-sit-desk.svg"}
             alt="Main Image"
-            className="w-10/12 mx-auto"
+            className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
           />
         </div>
-        <div className="col-start-1 col-end-4 w-full text-white flex justify-center gap-6 md:col-start-1 md:col-end-7">
-          <LinkedinIcon />
-          <GmailIcon />
+        <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
+          <Linkedin />
+          <Gmail />
         </div>
       </GridContainer>
     </Layout>

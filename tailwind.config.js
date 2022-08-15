@@ -3,6 +3,19 @@ module.exports = {
   content: ["./pages/**/*.{js,ts,jsx,tsx}", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      keyframes: {
+        "bounce-slow": {
+          "0%, 100%": {
+            transform: "translateY(-5%)",
+          },
+          "50%": {
+            transform: "translateY(5%)",
+          },
+        },
+      },
+      animation: {
+        "bounce-slow": "bounce-slow 5s ease-in-out infinite",
+      },
       colors: {
         "light-primary": "#A369F0",
         primary: "#6F36BB",
