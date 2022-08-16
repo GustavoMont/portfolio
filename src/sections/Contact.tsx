@@ -76,7 +76,7 @@ export default function Contact() {
               Vamos bater um papo
             </H5>
           </div>
-          <div className="w-full md:w-full md:max-w-lg">
+          <div className="w-full md:max-w-lg">
             <form
               action="https://formsubmit.co/lgmluisgm@gmail.com"
               method="POST"
@@ -140,7 +140,7 @@ export default function Contact() {
               </Button>
             </form>
           </div>
-          <div className=" flex gap-6">
+          <div className="flex gap-6">
             <Linkedin />
             <Gmail />
           </div>

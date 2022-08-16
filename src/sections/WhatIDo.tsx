@@ -33,7 +33,7 @@ export default function WhatIDo() {
         <div className="col-start-1 col-span-3 mt-4 md:col-span-5">
           <H5 className="text-primary md:text-heading-3">O que faço</H5>
         </div>
-        <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-11">
+        <div className="col-start-1 col-end-4 md:col-start-1 md:col-end-13 lg:col-start-3 lg:col-end-11">
           <FlexContainer className="md:py-20">
             {servicesCard.map(renderCard)}
           </FlexContainer>
