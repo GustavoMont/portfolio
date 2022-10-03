@@ -4,7 +4,7 @@ import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import Spin from "src/components/Spin";
+import Spin from "src/components/common/Spin";
 import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Gmail from "src/components/SocialMedia/Gmail";
