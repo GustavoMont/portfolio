@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WhiteCard = styled.div`
   border-radius: 0.5rem;
-  padding: 1rem 0.5rem;
+  padding: 1rem;
   display: flex;
   width: 100%;
   flex-direction: column;

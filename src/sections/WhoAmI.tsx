@@ -4,7 +4,11 @@ import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { Caption, H5 } from "src/styles/Typograph";
 
-export default function WhoAmI() {
+interface WhoIAmProps {
+  mainText: string;
+}
+
+export default function WhoAmI({ mainText }: WhoIAmProps) {
   return (
     <Layout id="quem-sou" className="flex items-center">
       <GridContainer className="h-full items-center">
@@ -27,7 +31,15 @@ export default function WhoAmI() {
             <div>
               <div data-aos="fade-right">
                 <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
-                  Sou <strong>Desenvolvedor Web</strong> desde 2021, quando
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: mainText
+                        .replaceAll("**", "<strong>")
+                        .replaceAll("*/*", "</strong>"),
+                    }}
+                  />
+
+                  {/* Sou <strong>Desenvolvedor Web</strong> desde 2021, quando
                   passei a estudar mais a fundo sobre desenvolvimento front-end
                   e logo já me aprofundei na área. Gosto sempre de manter{" "}
                   <strong> atualizado, estudar novos conceitos </strong>e
@@ -36,7 +48,7 @@ export default function WhoAmI() {
                   <strong> IFNMG</strong> e estagio na
                   <strong> CTRL+Play</strong>, atuando como desenvolvedor
                   front-end, mas sempre buscando aprender sobre novas áreas e me
-                  tornar ainda mais generalista.
+                  tornar ainda mais generalista. */}
                 </Caption>
               </div>
             </div>

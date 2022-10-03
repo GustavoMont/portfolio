@@ -1,5 +1,5 @@
 export default interface Service {
   title: string;
-  iconUrl: string;
-  explain: string;
+  icon: { url: string };
+  description: string;
 }

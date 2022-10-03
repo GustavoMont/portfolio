@@ -9,8 +9,14 @@ import WhoAmI from "src/sections/WhoAmI";
 import WhatIDo from "src/sections/WhatIDo";
 import Portfolio from "src/sections/Portfolio";
 import Contact from "src/sections/Contact";
+import Service from "src/models/Service";
 
-export default function Home() {
+interface HomeProps {
+  services: Service[];
+  whoAmI: string;
+}
+
+export default function Home(props: HomeProps) {
   useEffect(() => {
     Aos.init({ duration: 1900 });
   }, []);
@@ -24,14 +30,14 @@ export default function Home() {
       <GlobalStyle />
       <Menu />
       <Apresentation />
-      <WhoAmI />
-      <WhatIDo />
+      <WhoAmI mainText={props.whoAmI} />
+      <WhatIDo services={props.services} />
       {/* <Portfolio /> */}
       <Contact />
     </>
   );
 }
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<{ props: HomeProps }> {
   const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
   const resContent = await fetch("https://graphql.datocms.com/", {
     method: "POST",
@@ -41,36 +47,35 @@ export async function getStaticProps() {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      query: `{ 
-        about { sou, estudo }, 
-        allServices {
-          id,
-          title,
-          description
-        },
-        allProjects(
-          orderBy: [createdAt_ASC]
-        ){
-          thumbnail{
-            url,
-            title
-          }
-          id,
+      query: `
+      {
+        pageContent{
+          whoAmI
+        }
+      
+        allServices{
           title,
           description,
-          repoLink,
-          linkProducao
+          id,
+          icon {
+            url
+          }
         }
-     }`,
+      }
+      `,
     }),
   });
-  const resContentJson = await resContent.json();
-  const {
-    about,
-    ["allServices"]: servicos,
-    ["allProjects"]: projetos,
-  } = resContentJson.data;
+  const resContentJson: {
+    data: {
+      pageContent: {
+        whoAmI: string;
+      };
+      allServices: Service[];
+    };
+  } = await resContent.json();
+  const { allServices: services, pageContent } = resContentJson.data;
+
   return {
-    props: { about, servicos, projetos },
+    props: { services, whoAmI: pageContent.whoAmI },
   };
 }
