@@ -10,10 +10,12 @@ import WhatIDo from "src/sections/WhatIDo";
 import Portfolio from "src/sections/Portfolio";
 import Contact from "src/sections/Contact";
 import Service from "src/models/Service";
+import Project from "src/models/Project";
 
 interface HomeProps {
   services: Service[];
   whoAmI: string;
+  projects: Project[];
 }
 
 export default function Home(props: HomeProps) {
@@ -32,11 +34,22 @@ export default function Home(props: HomeProps) {
       <Apresentation />
       <WhoAmI mainText={props.whoAmI} />
       <WhatIDo services={props.services} />
-      {/* <Portfolio /> */}
+      <Portfolio projects={props.projects} />
       <Contact />
     </>
   );
 }
+
+interface ResponseDato {
+  data: {
+    pageContent: {
+      whoAmI: string;
+    };
+    allServices: Service[];
+    allProjects: Project[];
+  };
+}
+
 export async function getStaticProps(): Promise<{ props: HomeProps }> {
   const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
   const resContent = await fetch("https://graphql.datocms.com/", {
@@ -52,7 +65,6 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
         pageContent{
           whoAmI
         }
-      
         allServices{
           title,
           description,
@@ -60,22 +72,31 @@ export async function getStaticProps(): Promise<{ props: HomeProps }> {
           icon {
             url
           }
+        },
+        allProjects {
+          id
+          title,
+          projectType,
+          deployLink,
+          githubLink,
+          description,
+          thumbnail {
+            alt,
+            url
+          },
         }
       }
       `,
     }),
   });
-  const resContentJson: {
-    data: {
-      pageContent: {
-        whoAmI: string;
-      };
-      allServices: Service[];
-    };
-  } = await resContent.json();
-  const { allServices: services, pageContent } = resContentJson.data;
+  const resContentJson: ResponseDato = await resContent.json();
+  const {
+    allServices: services,
+    allProjects: projects,
+    pageContent,
+  } = resContentJson.data;
 
   return {
-    props: { services, whoAmI: pageContent.whoAmI },
+    props: { services, whoAmI: pageContent.whoAmI, projects },
   };
 }
