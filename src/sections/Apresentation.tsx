@@ -8,6 +8,7 @@ import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
+import PressableItem from "src/styles/common/PressableItem";
 import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
 import ManImage from "/public/man-sit-desk.svg";
 
@@ -35,6 +36,7 @@ export default function Apresentation() {
               color="primary"
               rounded="pill"
               className="mt-9"
+              hoverColor="white"
               onClick={() => router.push("#contatos")}
             >
               <ButtonText className="leading-none md:text-subtitle md:font-poppins">
@@ -52,8 +54,12 @@ export default function Apresentation() {
           />
         </div>
         <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
-          <Linkedin />
-          <Gmail />
+          <PressableItem>
+            <Linkedin />
+          </PressableItem>
+          <PressableItem>
+            <Gmail />
+          </PressableItem>
         </div>
       </GridContainer>
     </Layout>

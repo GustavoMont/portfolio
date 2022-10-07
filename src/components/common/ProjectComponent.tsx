@@ -2,6 +2,7 @@ import Link from "next/link";
 import React, { useRef, useState } from "react";
 import textFormatter from "src/functions/textFormatter";
 import Project from "src/models/Project";
+import PressableItem from "src/styles/common/PressableItem";
 import ProjectCard from "src/styles/common/ProjectCard";
 import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
 import ProjectLink from "./ProjectLink";
@@ -38,8 +39,12 @@ function ProjectComponent(props: ProjectComponentProps) {
           </BodyText>
         </div>
         <div className="links">
-          <ProjectLink linkType="deploy" href={props.deployLink} />
-          <ProjectLink linkType="github" href={props.githubLink} />
+          <PressableItem>
+            <ProjectLink linkType="deploy" href={props.deployLink} />
+          </PressableItem>
+          <PressableItem>
+            <ProjectLink linkType="github" href={props.githubLink} />
+          </PressableItem>
         </div>
       </div>
     </ProjectCard>
