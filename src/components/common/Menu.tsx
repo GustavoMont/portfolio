@@ -53,7 +53,7 @@ export default function Menu() {
         <Link href={option.href} passHref>
           <UnderlinedLink
             isActive={isActiveLink(option.href)}
-            bgColor="secondary"
+            lineColor="secondary"
             onClick={closeMenu}
           >
             {option.title}

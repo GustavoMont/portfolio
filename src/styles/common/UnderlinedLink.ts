@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface UnderlinedLinkProps {
-  bgColor: "primary" | "secondary";
+  lineColor: "primary" | "secondary";
   isActive?: boolean;
 }
 
@@ -20,7 +20,7 @@ const UnderlinedLink = styled.a<UnderlinedLinkProps>`
     width: ${({ isActive }) => (isActive ? "100%" : "0")};
     height: 2px;
     border-radius: 99px;
-    background-color: ${({ bgColor }) => `var(--${bgColor})`};
+    background-color: ${({ lineColor }) => `var(--${lineColor})`};
     transition: all ease 0.5s;
   }
 `;

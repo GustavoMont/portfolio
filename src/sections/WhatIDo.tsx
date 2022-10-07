@@ -1,12 +1,10 @@
 import React from "react";
-import { CodeIcon } from "src/components/icons";
 import ServicesCard from "src/components/common/ServicesCard";
 import Service from "src/models/Service";
 import FlexContainer from "src/styles/common/FlexContainer";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { H5 } from "src/styles/Typograph";
-
 interface WhatIDoProps {
   services: Service[];
 }

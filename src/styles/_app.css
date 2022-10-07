@@ -9,5 +9,6 @@
   --dark-black: theme("colors.dark-black");
   --secondary: theme("colors.secondary");
   --primary: theme("colors.primary");
+  --light-primary: theme("colors.light-primary");
   --white: theme("colors.white");
 }

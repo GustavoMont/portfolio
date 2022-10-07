@@ -23,7 +23,7 @@ const ProjectCard = styled.div<ProjectCard>`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
+    padding: 1.2rem;
   }
   .title {
     opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 0 : 1)};
@@ -42,7 +42,27 @@ const ProjectCard = styled.div<ProjectCard>`
     top: ${({ isDescriptionActive }) => (isDescriptionActive ? "0" : "100%")};
     opacity: ${({ isDescriptionActive }) => (!isDescriptionActive ? 0.5 : 1)};
     transition: 0.5s ease all;
-    /* overflow-y: scroll; */
+    user-select: none;
+    flex-direction: column;
+    .text {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      .link {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:hover {
+          color: var(--light-primary);
+        }
+      }
+    }
   }
 `;
 
