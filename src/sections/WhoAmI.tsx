@@ -33,9 +33,9 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
                 <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: (mainText || "")
-                        .replaceAll("**", "<strong>")
-                        .replaceAll("*/*", "</strong>"),
+                      __html: mainText
+                        .replace(/\*\*/g, "<strong>")
+                        .replace(/\*\/\*/g, "</strong>"),
                     }}
                   />
                 </Caption>
