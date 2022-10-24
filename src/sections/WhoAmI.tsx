@@ -33,22 +33,11 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
                 <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: mainText
+                      __html: (mainText || "")
                         .replaceAll("**", "<strong>")
                         .replaceAll("*/*", "</strong>"),
                     }}
                   />
-
-                  {/* Sou <strong>Desenvolvedor Web</strong> desde 2021, quando
-                  passei a estudar mais a fundo sobre desenvolvimento front-end
-                  e logo já me aprofundei na área. Gosto sempre de manter{" "}
-                  <strong> atualizado, estudar novos conceitos </strong>e
-                  aceitar <strong> novos desafios.</strong> Atualmente curso
-                  <strong> Sistemas de Informação</strong> no{" "}
-                  <strong> IFNMG</strong> e estagio na
-                  <strong> CTRL+Play</strong>, atuando como desenvolvedor
-                  front-end, mas sempre buscando aprender sobre novas áreas e me
-                  tornar ainda mais generalista. */}
                 </Caption>
               </div>
             </div>
