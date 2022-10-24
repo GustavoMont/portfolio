@@ -25,16 +25,6 @@ export default function Portfolio({ projects }: PortfolioProps) {
             ))}
           </FlexContainer>
         </div>
-        {/* <div className="col-start-1 col-end-4 md:col-span-12 justify-self-center">
-          <Button
-            border="outlined"
-            color="secondary"
-            rounded="pill"
-            hoverColor="white"
-          >
-            <ButtonText>Ver mais projetos</ButtonText>
-          </Button>
-        </div> */}
       </GridContainer>
     </Layout>
   );
