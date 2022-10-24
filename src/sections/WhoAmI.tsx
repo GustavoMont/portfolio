@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from "react";
+import React from "react";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { Caption, H5 } from "src/styles/Typograph";
+import textFormatter from "src/functions/textFormatter";
 
 interface WhoIAmProps {
   mainText: string;
@@ -33,9 +34,7 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
                 <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: mainText
-                        .replace(/\*\*/g, "<strong>")
-                        .replace(/\*\/\*/g, "</strong>"),
+                      __html: textFormatter(mainText),
                     }}
                   />
                 </Caption>
