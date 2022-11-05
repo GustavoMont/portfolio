@@ -1,4 +1,5 @@
 import Aos from "aos";
+import SectionProvider from "data/provider/SectionProvider";
 import { AppProps } from "next/app";
 
 import { useEffect } from "react";
@@ -8,7 +9,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Aos.init({});
   }, []);
-  return <Component {...pageProps} />;
+  return (
+    <SectionProvider>
+      <Component {...pageProps} />
+    </SectionProvider>
+  );
 }
 
 export default MyApp;

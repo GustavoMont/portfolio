@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { GmailIcon, LinkedinIcon } from "src/components/icons";
+import SectionObserver from "src/components/common/SectionObserver";
 import Gmail from "src/components/SocialMedia/Gmail";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
@@ -10,7 +9,6 @@ import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import PressableItem from "src/styles/common/PressableItem";
 import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
-import ManImage from "/public/man-sit-desk.svg";
 
 export default function Apresentation() {
   const router = useRouter();
@@ -24,11 +22,13 @@ export default function Apresentation() {
             </H5>
           </div>
           <div>
-            <div data-aos="fade-left">
-              <Subtitle className="md:text-heading-5 md:tracking-heading-4">
-                Desenvolvedor Web
-              </Subtitle>
-            </div>
+            <SectionObserver href="">
+              <div data-aos="fade-left">
+                <Subtitle className="md:text-heading-5 md:tracking-heading-4">
+                  Desenvolvedor Web
+                </Subtitle>
+              </div>
+            </SectionObserver>
           </div>
           <div className="flex justify-center">
             <Button

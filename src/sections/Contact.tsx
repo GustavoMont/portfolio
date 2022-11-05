@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import InputText from "src/components/Form/InputText";
 import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
@@ -9,6 +9,9 @@ import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Gmail from "src/components/SocialMedia/Gmail";
 import PressableItem from "src/styles/common/PressableItem";
+import useSection from "data/hooks/useSection";
+import ReactVisibilitySensor from "react-visibility-sensor";
+import SectionObserver from "src/components/common/SectionObserver";
 
 export default function Contact() {
   const INITIAL_FORMDATA = {
@@ -17,6 +20,8 @@ export default function Contact() {
     subject: "",
     message: "",
   };
+  const ref = useRef(null);
+  const { setAsActive } = useSection();
   const [formData, setFormData] = useState(INITIAL_FORMDATA);
   const [isLoading, setIsLoading] = useState(false);
   const [feedBack, setFeedBack] = useState({
@@ -73,11 +78,13 @@ export default function Contact() {
       <GridContainer className="items-center">
         <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-11 flex flex-col items-center gap-6">
           <div data-aos="fade-right">
-            <H5 className="text-primary md:text-heading-4 md:tracking-heading-4">
-              Vamos bater um papo
-            </H5>
+            <SectionObserver href="#contatos">
+              <H5 className="text-primary md:text-heading-4 md:tracking-heading-4">
+                Vamos bater um papo
+              </H5>
+            </SectionObserver>
           </div>
-          <div className="w-full md:max-w-lg">
+          <div className="w-full md:max-w-lg" ref={ref}>
             <form
               action="https://formsubmit.co/lgmluisgm@gmail.com"
               method="POST"

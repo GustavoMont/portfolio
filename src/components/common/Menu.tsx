@@ -1,3 +1,5 @@
+import { ActiveSectionHref } from "data/context/SectionContext";
+import useSection from "data/hooks/useSection";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
@@ -9,14 +11,14 @@ import { H5, Subtitle } from "src/styles/Typograph";
 import { CloseIcon, Hamburger } from "../icons";
 
 interface Options {
-  href: string;
+  href: ActiveSectionHref;
   title: string;
 }
 
 export default function Menu() {
   const [activeMobileMenu, setActiveMobileMenu] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  const { activeSection, setAsActive } = useSection();
   const options: Options[] = [
     { href: "#quem-sou", title: "Quem sou" },
     { href: "#o-que-faco", title: "O que faço" },
@@ -30,10 +32,7 @@ export default function Menu() {
     setActiveMobileMenu(true);
   }
 
-  function isActiveLink(href: string) {
-    const sectionId = router.asPath.split("/")[1];
-    return href === sectionId;
-  }
+  const isActiveLink = (href: ActiveSectionHref) => activeSection === href;
 
   useEffect(() => {
     document.body.style.overflowY = activeMobileMenu ? "hidden" : "auto";
@@ -47,16 +46,16 @@ export default function Menu() {
     });
   }, []);
 
-  function navLinks(option: Options, i: number) {
+  function navLinks({ href, title }: Options, i: number) {
     return (
       <li key={i}>
-        <Link href={option.href} passHref>
+        <Link href={href} passHref>
           <UnderlinedLink
-            isActive={isActiveLink(option.href)}
+            isActive={isActiveLink(href)}
             lineColor="secondary"
             onClick={closeMenu}
           >
-            {option.title}
+            {title}
           </UnderlinedLink>
         </Link>
       </li>
@@ -69,7 +68,7 @@ export default function Menu() {
         <Navbar className="text-white bg-dark-black">
           <GridContainer>
             <Link href={"/"} passHref>
-              <Logo className="col-span-3">
+              <Logo className="col-span-3" onClick={() => setAsActive("")}>
                 <span data-text="Gustavo">Gustavo</span>
                 <span data-text="Monteiro">Monteiro</span>
               </Logo>

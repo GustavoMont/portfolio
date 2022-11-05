@@ -50,7 +50,7 @@ interface ResponseDato {
   };
 }
 
-export async function getStaticProps(): Promise<{ props: HomeProps }> {
+export async function getServerSideProps(): Promise<{ props: HomeProps }> {
   const token = process.env.NEXT_DATOCMS_API_TOKEN_RO;
   const resContent = await fetch("https://graphql.datocms.com/", {
     method: "POST",

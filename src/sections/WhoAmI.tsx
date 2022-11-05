@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { Caption, H5 } from "src/styles/Typograph";
 import textFormatter from "src/functions/textFormatter";
+import useSection from "data/hooks/useSection";
+import SectionObserver from "src/components/common/SectionObserver";
 
 interface WhoIAmProps {
   mainText: string;
@@ -25,21 +27,23 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
           <div className="w-full">
             <div data-aos="fade-down">
               <H5 className="md:text-heading-4 md:tracking-heading-4">
-                Muito Prazer, Sou {""}
+                Muito prazer, sou {""}
                 <span className="text-primary">Gustavo Monteiro 👋</span>
               </H5>
             </div>
-            <div>
-              <div data-aos="fade-right">
-                <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: textFormatter(mainText),
-                    }}
-                  />
-                </Caption>
+            <SectionObserver href="#quem-sou">
+              <div>
+                <div data-aos="fade-right">
+                  <Caption className="mt-4 md:text-subtitle md:tracking-subtitle">
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: textFormatter(mainText),
+                      }}
+                    />
+                  </Caption>
+                </div>
               </div>
-            </div>
+            </SectionObserver>
           </div>
         </div>
       </GridContainer>
