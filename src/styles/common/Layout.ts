@@ -8,6 +8,7 @@ const Layout = styled.section<LayoutProps>`
   padding-top: 3.5rem;
   min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
   color: var(--white);
+  background-color: #000000cc;
   @media (min-width: 768px) {
     padding-top: 4rem;
   }

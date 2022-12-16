@@ -33,7 +33,7 @@ export default function Apresentation() {
           <div className="flex justify-center">
             <Button
               border="fill"
-              color="primary"
+              color="secondary"
               rounded="pill"
               className="mt-9"
               hoverColor="white"
