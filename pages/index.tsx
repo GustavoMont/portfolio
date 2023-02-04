@@ -11,7 +11,6 @@ import Portfolio from "src/sections/Portfolio";
 import Contact from "src/sections/Contact";
 import Service from "src/models/Service";
 import Project from "src/models/Project";
-import Snower from "src/components/special/Snower";
 
 interface HomeProps {
   services: Service[];
@@ -32,7 +31,6 @@ export default function Home(props: HomeProps) {
       </Head>
       <GlobalStyle />
       <Menu />
-      <Snower />
       <Apresentation />
       <WhoAmI mainText={props.whoAmI} />
       <WhatIDo services={props.services} />
