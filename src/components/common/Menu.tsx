@@ -46,7 +46,7 @@ export default function Menu() {
 
   function navLinks({ href, title }: Options, i: number) {
     return (
-      <li key={i}>
+      <li key={href}>
         <UnderlinedLink
           isActive={isActiveLink(href)}
           lineColor="secondary"
