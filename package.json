@@ -20,7 +20,6 @@
     "@types/aos": "^3.0.4",
     "@types/node": "^18.7.1",
     "@types/react": "^18.0.17",
-    "@types/react-visibility-sensor": "^5.1.0",
     "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.8",
     "babel-plugin-styled-components": "^2.0.7",
