@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 interface UnderlinedLinkProps {
   lineColor: "primary" | "secondary";
   isActive?: boolean;
 }
 
-const UnderlinedLink = styled.a<UnderlinedLinkProps>`
+const UnderlinedLink = styled(Link)<UnderlinedLinkProps>`
   position: relative;
   &:hover {
     :after {

@@ -1,13 +1,11 @@
 import { ActiveSectionHref } from "data/context/SectionContext";
 import useSection from "data/hooks/useSection";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useEffect, useRef, useState } from "react";
 import GridContainer from "src/styles/common/GridContainer";
 import UnderlinedLink from "src/styles/common/UnderlinedLink";
 import Logo from "src/styles/Logo";
 import Navbar, { MobileMenu } from "src/styles/Navbar";
-import { H5, Subtitle } from "src/styles/Typograph";
 import { CloseIcon, Hamburger } from "../icons";
 
 interface Options {
@@ -49,15 +47,15 @@ export default function Menu() {
   function navLinks({ href, title }: Options, i: number) {
     return (
       <li key={i}>
-        <Link href={href} passHref>
-          <UnderlinedLink
-            isActive={isActiveLink(href)}
-            lineColor="secondary"
-            onClick={closeMenu}
-          >
-            {title}
-          </UnderlinedLink>
-        </Link>
+        <UnderlinedLink
+          isActive={isActiveLink(href)}
+          lineColor="secondary"
+          onClick={closeMenu}
+          href={href}
+          passHref
+        >
+          {title}
+        </UnderlinedLink>
       </li>
     );
   }
