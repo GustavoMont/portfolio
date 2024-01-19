@@ -42,14 +42,17 @@ function ProjectLink(props: ProjectLinkProps) {
     return <React.Fragment />;
   }
   return (
-    <Link href={props.href || ""} passHref>
-      <UnderlinedLink target={"_blank"} lineColor="primary">
-        <div className="flex items-center justify-center gap-2 align-middle link">
-          <div>{linkTypeHandler.icon}</div>
-          <ButtonText className="mt-0.5">{linkTypeHandler.text}</ButtonText>
-        </div>
-      </UnderlinedLink>
-    </Link>
+    <UnderlinedLink
+      target={"_blank"}
+      lineColor="primary"
+      href={props.href || ""}
+      passHref
+    >
+      <div className="flex items-center justify-center gap-2 align-middle link">
+        <div>{linkTypeHandler.icon}</div>
+        <ButtonText className="mt-0.5">{linkTypeHandler.text}</ButtonText>
+      </div>
+    </UnderlinedLink>
   );
 }
 
