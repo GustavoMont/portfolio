@@ -1,10 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { Caption, H5 } from "src/styles/Typograph";
 import textFormatter from "src/functions/textFormatter";
-import useSection from "data/hooks/useSection";
 import SectionObserver from "src/components/common/SectionObserver";
 
 interface WhoIAmProps {

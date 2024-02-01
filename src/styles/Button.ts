@@ -2,15 +2,24 @@ import styled from "styled-components";
 
 type borderType = "fill" | "outlined";
 type roundedType = "default" | "pill";
+
+type Color = "primary" | "secondary";
+type HoverColor = "white" | "primary" | "secondary";
+
 interface ButtonProps {
   border: borderType;
-  hoverColor?: "white" | "primary" | "secondary";
-  color: "primary" | "secondary";
+  hoverColor?: HoverColor;
+  color: Color;
   rounded: roundedType;
   disabled?: boolean;
 }
 
-function handleColor(border: borderType, colors: any) {
+type ButtonColorVariants = {
+  main: Color;
+  hover?: HoverColor;
+};
+
+function handleColor(border: borderType, colors: ButtonColorVariants) {
   switch (border) {
     case "fill":
       return `var(--${colors.main})`;

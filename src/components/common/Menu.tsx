@@ -44,7 +44,7 @@ export default function Menu() {
     });
   }, []);
 
-  function navLinks({ href, title }: Options, i: number) {
+  function navLinks({ href, title }: Options) {
     return (
       <li key={href}>
         <UnderlinedLink

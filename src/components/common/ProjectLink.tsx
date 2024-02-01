@@ -1,5 +1,4 @@
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import UnderlinedLink from "src/styles/common/UnderlinedLink";
 import { ButtonText } from "src/styles/Typograph";
 import { CodeIcon, GithubIcon } from "../icons";
