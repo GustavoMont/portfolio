@@ -1,6 +1,4 @@
-import useSection from "data/hooks/useSection";
-import React, { useEffect, useRef } from "react";
-import ReactVisibilitySensor from "react-visibility-sensor";
+import React from "react";
 import SectionObserver from "src/components/common/SectionObserver";
 import ServicesCard from "src/components/common/ServicesCard";
 import Service from "src/models/Service";

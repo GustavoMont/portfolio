@@ -6,8 +6,6 @@ import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { H5 } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
-import ReactVisibilitySensor from "react-visibility-sensor";
-import useSection from "data/hooks/useSection";
 
 interface PortfolioProps {
   projects: Project[];
@@ -23,7 +21,7 @@ export default function Portfolio({ projects }: PortfolioProps) {
         <SectionObserver href="#portfolio">
           <div className="col-start-1 col-end-4 md:col-span-12 justify-self-center w-full">
             <FlexContainer>
-              {projects.map((project, i) => (
+              {projects.map((project) => (
                 <ProjectComponent {...project} key={project.id} />
               ))}
             </FlexContainer>

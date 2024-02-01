@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import InputText from "src/components/Form/InputText";
 import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
@@ -9,8 +9,6 @@ import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Gmail from "src/components/SocialMedia/Gmail";
 import PressableItem from "src/styles/common/PressableItem";
-import useSection from "data/hooks/useSection";
-import ReactVisibilitySensor from "react-visibility-sensor";
 import SectionObserver from "src/components/common/SectionObserver";
 
 export default function Contact() {
@@ -21,7 +19,6 @@ export default function Contact() {
     message: "",
   };
   const ref = useRef(null);
-  const { setAsActive } = useSection();
   const [formData, setFormData] = useState(INITIAL_FORMDATA);
   const [isLoading, setIsLoading] = useState(false);
   const [feedBack, setFeedBack] = useState({
@@ -34,7 +31,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setFormData({
       ...formData,

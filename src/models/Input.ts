@@ -4,6 +4,6 @@ export default interface Input {
   name: string;
   required?: boolean;
   onChange: (
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
 }
