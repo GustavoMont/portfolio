@@ -20,14 +20,19 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
   }
   body::-webkit-scrollbar {
-  width: .5rem;               /* width of the entire scrollbar */
-}
+    width: .5rem;               /* width of the entire scrollbar */
+  }
 
-body::-webkit-scrollbar-thumb {
-  background-color: var(--primary);
-  border-radius: 99px;
-
-}
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 99px;
+  }
+  button {
+    background: none;
+    padding: 0;
+    border: none;
+    color: inherit;
+  }
 `;
 
 export default GlobalStyle;

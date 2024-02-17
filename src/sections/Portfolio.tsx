@@ -2,10 +2,10 @@ import React from "react";
 import ProjectComponent from "src/components/common/ProjectComponent";
 import Project from "src/models/Project";
 import FlexContainer from "src/styles/common/FlexContainer";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { H5 } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
+import GridContainer from "src/styles/common/GridContainer";
 
 interface PortfolioProps {
   projects: Project[];

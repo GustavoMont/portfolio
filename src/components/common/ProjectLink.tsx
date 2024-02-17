@@ -45,7 +45,6 @@ function ProjectLink(props: ProjectLinkProps) {
       target={"_blank"}
       lineColor="primary"
       href={props.href || ""}
-      passHref
     >
       <div className="flex items-center justify-center gap-2 align-middle link">
         <div>{linkTypeHandler.icon}</div>

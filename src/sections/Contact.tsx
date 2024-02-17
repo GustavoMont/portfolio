@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import InputText from "src/components/Form/InputText";
 import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import Spin from "src/components/common/Spin";
 import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
@@ -10,6 +9,7 @@ import Linkedin from "src/components/SocialMedia/Linkedin";
 import Gmail from "src/components/SocialMedia/Gmail";
 import PressableItem from "src/styles/common/PressableItem";
 import SectionObserver from "src/components/common/SectionObserver";
+import GridContainer from "src/styles/common/GridContainer";
 
 export default function Contact() {
   const INITIAL_FORMDATA = {
@@ -31,7 +31,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setFormData({
       ...formData,

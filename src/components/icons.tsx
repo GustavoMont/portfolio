@@ -45,9 +45,8 @@ export const GithubIcon = () => (
   </svg>
 );
 
-export const Hamburger = (props: IconProps) => (
+export const Hamburger = () => (
   <svg
-    className={`w-${props.size || 6} h-${props.size || 6}`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -97,9 +96,8 @@ export const GmailIcon = (props: IconProps) => (
   </svg>
 );
 
-export const CloseIcon = (props: IconProps) => (
+export const CloseIcon = () => (
   <svg
-    className={`w-${props.size || 6} h-${props.size || 6}`}
     fill="none"
     stroke="currentColor"
     viewBox="0 0 24 24"

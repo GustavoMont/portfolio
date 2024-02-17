@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import Link from "next/link";
+import { ColorKey } from "../colors/colors.type";
 
 interface UnderlinedLinkProps {
-  lineColor: "primary" | "secondary";
+  lineColor: Extract<ColorKey, "primary" | "secondary">;
   isActive?: boolean;
 }
 
-const UnderlinedLink = styled(Link)<UnderlinedLinkProps>`
+const UnderlinedLink = styled.a<UnderlinedLinkProps>`
   position: relative;
   &:hover {
     :after {
@@ -21,7 +21,8 @@ const UnderlinedLink = styled(Link)<UnderlinedLinkProps>`
     width: ${({ isActive }) => (isActive ? "100%" : "0")};
     height: 2px;
     border-radius: 99px;
-    background-color: ${({ lineColor }) => `var(--${lineColor})`};
+    background-color: ${({ lineColor, theme: { colors } }) =>
+      colors[lineColor]};
     transition: all ease 0.5s;
   }
 `;

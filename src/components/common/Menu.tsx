@@ -2,11 +2,16 @@ import { ActiveSectionHref } from "data/context/SectionContext";
 import useSection from "data/hooks/useSection";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
-import GridContainer from "src/styles/common/GridContainer";
 import UnderlinedLink from "src/styles/common/UnderlinedLink";
 import Logo from "src/styles/Logo";
-import Navbar, { MobileMenu } from "src/styles/Navbar";
+import {
+  Navbar,
+  MobileMenu,
+  NavbarListContainer,
+  NavbarIconContainer,
+} from "src/styles/Navbar";
 import { CloseIcon, Hamburger } from "../icons";
+import { IconButton } from "./IconButton";
 
 interface Options {
   href: ActiveSectionHref;
@@ -42,6 +47,7 @@ export default function Menu() {
         setActiveMobileMenu(false);
       }
     });
+    return;
   }, []);
 
   function navLinks({ href, title }: Options) {
@@ -52,7 +58,6 @@ export default function Menu() {
           lineColor="secondary"
           onClick={closeMenu}
           href={href}
-          passHref
         >
           {title}
         </UnderlinedLink>
@@ -64,25 +69,22 @@ export default function Menu() {
     <>
       <header>
         <Navbar className="text-white bg-dark-black">
-          <GridContainer>
-            <Link href={"/"} passHref>
-              <Logo className="col-span-3" onClick={() => setAsActive("")}>
-                <span data-text="Gustavo">Gustavo</span>
-                <span data-text="Monteiro">Monteiro</span>
-              </Logo>
-            </Link>
-            <div
-              className="col-start-4 self-center w-6 md:hidden"
-              onClick={openMenu}
-            >
-              <Hamburger size={6} />
-            </div>
-            <div className="hidden md:block col-start-7 col-end-13 w-full">
-              <ul className="flex gap-4 justify-end items-center h-full">
-                {options.map(navLinks)}
-              </ul>
-            </div>
-          </GridContainer>
+          <Link href={"/"} passHref>
+            <Logo className="col-span-3" onClick={() => setAsActive("")}>
+              <span data-text="Gustavo">Gustavo</span>
+              <span data-text="Monteiro">Monteiro</span>
+            </Logo>
+          </Link>
+          <NavbarIconContainer className="col-start-4 self-center w-6 md:hidden">
+            <IconButton aria-label="abrir menu" onClick={openMenu}>
+              <Hamburger />
+            </IconButton>
+          </NavbarIconContainer>
+          <NavbarListContainer className="hidden md:block col-start-7 col-end-13 w-full">
+            <ul className="flex gap-4 justify-end items-center h-full">
+              {options.map(navLinks)}
+            </ul>
+          </NavbarListContainer>
         </Navbar>
       </header>
       <MobileMenu
@@ -90,9 +92,11 @@ export default function Menu() {
         active={activeMobileMenu}
         ref={menuRef}
       >
-        <div id="close" onClick={closeMenu}>
-          <CloseIcon size={6} />
-        </div>
+        <NavbarIconContainer id="close">
+          <IconButton aria-label="fechar menu" onClick={closeMenu}>
+            <CloseIcon />
+          </IconButton>
+        </NavbarIconContainer>
         <ul>{options.map(navLinks)}</ul>
       </MobileMenu>
     </>

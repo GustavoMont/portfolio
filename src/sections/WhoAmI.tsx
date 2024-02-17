@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { Caption, H5 } from "src/styles/Typograph";
 import textFormatter from "src/functions/textFormatter";
 import SectionObserver from "src/components/common/SectionObserver";
+import GridContainer from "src/styles/common/GridContainer";
 
 interface WhoIAmProps {
   mainText: string;
