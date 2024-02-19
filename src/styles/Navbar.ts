@@ -12,7 +12,7 @@ export const Navbar = styled.nav`
   height: 3rem;
   z-index: 99;
   color: ${({ theme: { colors } }) => colors.white};
-  padding: 3rem 1rem;
+  padding: 0 2rem;
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
   @media (min-width: ${BREAKPOINTS.md}) {
     height: 4rem;

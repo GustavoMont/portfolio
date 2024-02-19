@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
 import React from "react";
+import { IconButton } from "src/components/common/IconButton";
 import SectionObserver from "src/components/common/SectionObserver";
 import Gmail from "src/components/SocialMedia/Gmail";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import PressableItem from "src/styles/common/PressableItem";
 import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
 
 export default function Apresentation() {
@@ -39,9 +39,8 @@ export default function Apresentation() {
               hoverColor="white"
               onClick={() => router.push("#contatos")}
             >
-              <ButtonText className="leading-none md:text-subtitle md:font-poppins">
+
                 Contate-me
-              </ButtonText>
             </Button>
           </div>
         </div>
@@ -54,12 +53,12 @@ export default function Apresentation() {
           />
         </div>
         <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
-          <PressableItem>
+          <IconButton aria-label="ir para linkedin" >
             <Linkedin />
-          </PressableItem>
-          <PressableItem>
+          </IconButton>
+          <IconButton aria-label="entrar em contato por e-mail" >
             <Gmail />
-          </PressableItem>
+          </IconButton>
         </div>
       </GridContainer>
     </Layout>

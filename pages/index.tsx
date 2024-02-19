@@ -32,10 +32,6 @@ export default function Home(props: HomeProps) {
       <GlobalStyle />
       <Menu />
       <Apresentation />
-      <WhoAmI mainText={props.whoAmI} />
-      <WhatIDo services={props.services} />
-      <Portfolio projects={props.projects} />
-      <Contact />
     </>
   );
 }

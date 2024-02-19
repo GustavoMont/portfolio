@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BREAKPOINTS } from "../constants/breaking-points-styles.constants";
 
 interface LayoutProps {
   isNotScreenHeight?: boolean;
@@ -7,9 +8,12 @@ interface LayoutProps {
 const Layout = styled.section<LayoutProps>`
   padding-top: 3.5rem;
   min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
-  color: var(--white);
-  background-color: #000000cc;
-  @media (min-width: 768px) {
+  color: ${({ theme: {colors} }) => colors.white};
+  background-color: ${({ theme: {backgroundScreen} }) => backgroundScreen};
+  img {
+    width: 85%;
+  }
+  @media (min-width: ${BREAKPOINTS.md}) {
     padding-top: 4rem;
   }
 `;
