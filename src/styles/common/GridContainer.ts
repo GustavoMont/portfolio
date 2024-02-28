@@ -1,9 +1,16 @@
 import styled from "styled-components";
 
-const GridContainer = styled.div`
+type Props = {
+  alignItems?: "start" | "center" | "end" | "stretch";
+  gap?: number;
+};
+
+const GridContainer = styled.div<Props>`
   padding: 0 0.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
+  gap: ${({ gap = 0 }) => `${gap}rem`};
+  align-items: ${({ alignItems = "stretch" }) => alignItems};
   width: 100%;
   @media (min-width: 768px) {
     padding: 0 2rem;

@@ -1,5 +1,6 @@
 import "styled-components";
 import { Colors } from "./colors/colors.type";
+import { Fonts } from "./fonts/fonts.type";
 
 type fontWeight = {
   600: string;
@@ -8,13 +9,10 @@ type fontWeight = {
   300: string;
 };
 
-type fonts = {
-  title: fontWeight;
-  text: fontWeight;
-};
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: Colors;
     backgroundScreen: string;
+    fonts: Fonts;
   }
 }

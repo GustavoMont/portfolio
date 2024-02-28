@@ -8,8 +8,8 @@ interface LayoutProps {
 const Layout = styled.section<LayoutProps>`
   padding-top: 3.5rem;
   min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
-  color: ${({ theme: {colors} }) => colors.white};
-  background-color: ${({ theme: {backgroundScreen} }) => backgroundScreen};
+  color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
   img {
     width: 85%;
   }

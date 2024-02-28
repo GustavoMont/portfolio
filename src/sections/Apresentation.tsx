@@ -8,55 +8,49 @@ import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
+import { ButtonText, H2, H3, H5, Span, Subtitle } from "src/styles/Typograph";
 
 export default function Apresentation() {
   const router = useRouter();
   return (
-    <Layout className="flex items-center">
-      <GridContainer className="items-center">
+    <Layout>
+      <GridContainer gap={2} alignItems="center">
         <div className="col-start-1 col-end-4 w-full mt-11 md:col-start-1 md:col-end-7">
-          <div data-aos="fade-up">
-            <H5 className="md:text-heading-4 md:tracking-heading-2 md:font-light">
-              Olá, Sou o<span className="text-primary"> Gustavo</span>
-            </H5>
-          </div>
-          <div>
-            <SectionObserver href="">
-              <div data-aos="fade-left">
-                <Subtitle className="md:text-heading-5 md:tracking-heading-4">
-                  Desenvolvedor Web
-                </Subtitle>
-              </div>
-            </SectionObserver>
-          </div>
-          <div className="flex justify-center">
-            <Button
-              border="fill"
-              color="primary"
-              rounded="pill"
-              className="mt-9"
-              hoverColor="white"
-              onClick={() => router.push("#contatos")}
-            >
+          <H2 data-aos="fade-up">
+            Olá, Sou o<Span color="primary"> Gustavo</Span>
+          </H2>
 
-                Contate-me
-            </Button>
-          </div>
+          <SectionObserver href="">
+            <H3
+              data-aos="fade-left"
+              className="md:text-heading-5 md:tracking-heading-4"
+            >
+              Desenvolvedor Web
+            </H3>
+          </SectionObserver>
+
+          <Button
+            border="fill"
+            color="primary"
+            rounded="pill"
+            hoverColor="white"
+            onClick={() => router.push("#contatos")}
+          >
+            Contate-me
+          </Button>
         </div>
-        <div className="col-start-1 col-end-4 mt-10 md:mt-0 md:col-start-8 md:col-end-13">
-          <img
-            data-aos="fade-right"
-            src={"man-sit-desk.svg"}
-            alt="Main Image"
-            className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
-          />
-        </div>
+
+        <img
+          data-aos="fade-right"
+          src={"man-sit-desk.svg"}
+          alt="Main Image"
+          className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
+        />
         <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
-          <IconButton aria-label="ir para linkedin" >
+          <IconButton aria-label="ir para linkedin">
             <Linkedin />
           </IconButton>
-          <IconButton aria-label="entrar em contato por e-mail" >
+          <IconButton aria-label="entrar em contato por e-mail">
             <Gmail />
           </IconButton>
         </div>
