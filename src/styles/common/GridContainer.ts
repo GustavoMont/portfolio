@@ -13,7 +13,6 @@ const GridContainer = styled.div<Props>`
   width: 100%;
   @media (min-width: ${BREAKPOINTS.md}) {
     grid-template-columns: repeat(12, 1fr);
-    border: 1px solid white;
     padding: 0 2rem;
     grid-column-gap: 24px;
   }
