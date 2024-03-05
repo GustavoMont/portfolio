@@ -65,26 +65,24 @@ export default function Menu() {
     );
   }
 
+  const optionList = <ul>{options.map(navLinks)}</ul>;
+
   return (
     <>
       <header>
-        <Navbar className="text-white bg-dark-black">
+        <Navbar>
           <Link href={"/"} passHref>
-            <Logo className="col-span-3" onClick={() => setAsActive("")}>
+            <Logo onClick={() => setAsActive("")}>
               <span data-text="Gustavo">Gustavo</span>
               <span data-text="Monteiro">Monteiro</span>
             </Logo>
           </Link>
-          <NavbarIconContainer className="col-start-4 self-center w-6 md:hidden">
+          <NavbarIconContainer>
             <IconButton aria-label="abrir menu" onClick={openMenu}>
               <Hamburger />
             </IconButton>
           </NavbarIconContainer>
-          <NavbarListContainer className="hidden md:block col-start-7 col-end-13 w-full">
-            <ul className="flex gap-4 justify-end items-center h-full">
-              {options.map(navLinks)}
-            </ul>
-          </NavbarListContainer>
+          <NavbarListContainer>{optionList}</NavbarListContainer>
         </Navbar>
       </header>
       <MobileMenu
@@ -97,7 +95,7 @@ export default function Menu() {
             <CloseIcon />
           </IconButton>
         </NavbarIconContainer>
-        <ul>{options.map(navLinks)}</ul>
+        {optionList}
       </MobileMenu>
     </>
   );

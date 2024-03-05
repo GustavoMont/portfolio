@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { BREAKPOINTS } from "../constants/breaking-points-styles.constants";
 
 type Props = {
   alignItems?: "start" | "center" | "end" | "stretch";
@@ -6,15 +7,14 @@ type Props = {
 };
 
 const GridContainer = styled.div<Props>`
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: ${({ gap = 0 }) => `${gap}rem`};
-  align-items: ${({ alignItems = "stretch" }) => alignItems};
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  @media (min-width: 768px) {
-    padding: 0 2rem;
+  @media (min-width: ${BREAKPOINTS.md}) {
     grid-template-columns: repeat(12, 1fr);
+    border: 1px solid white;
+    padding: 0 2rem;
     grid-column-gap: 24px;
   }
 `;

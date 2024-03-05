@@ -10,6 +10,9 @@ const Layout = styled.section<LayoutProps>`
   min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
   color: ${({ theme: { colors } }) => colors.white};
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
+  border: 2px solid white;
+  display: flex;
+  flex-direction: column;
   img {
     width: 85%;
   }

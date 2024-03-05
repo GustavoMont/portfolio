@@ -8,14 +8,15 @@ import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
 import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import { ButtonText, H2, H3, H5, Span, Subtitle } from "src/styles/Typograph";
+import { ApresentationSection } from "src/styles/sections/ApresentationSection.style";
+import { H2, H3, Span } from "src/styles/Typograph";
 
 export default function Apresentation() {
   const router = useRouter();
   return (
     <Layout>
-      <GridContainer gap={2} alignItems="center">
-        <div className="col-start-1 col-end-4 w-full mt-11 md:col-start-1 md:col-end-7">
+      <ApresentationSection>
+        <div className="main-info">
           <H2 data-aos="fade-up">
             Olá, Sou o<Span color="primary"> Gustavo</Span>
           </H2>
@@ -46,7 +47,7 @@ export default function Apresentation() {
           alt="Main Image"
           className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
         />
-        <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
+        <div className="social-media col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
           <IconButton aria-label="ir para linkedin">
             <Linkedin />
           </IconButton>
@@ -54,7 +55,7 @@ export default function Apresentation() {
             <Gmail />
           </IconButton>
         </div>
-      </GridContainer>
+      </ApresentationSection>
     </Layout>
   );
 }
