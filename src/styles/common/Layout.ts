@@ -6,12 +6,12 @@ interface LayoutProps {
 }
 
 const Layout = styled.section<LayoutProps>`
+  padding: 0 2rem;
   padding-top: 3.5rem;
+  height: 100vh;
   min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
   color: ${({ theme: { colors } }) => colors.white};
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
-  display: flex;
-  flex-direction: column;
   img {
     width: 85%;
   }

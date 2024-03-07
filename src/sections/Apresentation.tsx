@@ -16,7 +16,7 @@ export default function Apresentation() {
   return (
     <Layout>
       <ApresentationSection>
-        <div className="main-info">
+        <div data-aos="fade-up" className="main-info">
           <H2 data-aos="fade-up">
             Olá, Sou o<Span color="primary"> Gustavo</Span>
           </H2>
@@ -31,6 +31,7 @@ export default function Apresentation() {
           </SectionObserver>
 
           <Button
+            data-aos="fade-up"
             border="fill"
             color="primary"
             rounded="pill"
@@ -42,7 +43,7 @@ export default function Apresentation() {
         </div>
 
         <img
-          data-aos="fade-right"
+          data-aos="fade-up"
           src={"man-sit-desk.svg"}
           alt="Main Image"
           className="w-10/12 mx-auto motion-safe:animate-bounce-slow"

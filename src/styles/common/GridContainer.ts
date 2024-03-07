@@ -7,10 +7,12 @@ type Props = {
 };
 
 const GridContainer = styled.div<Props>`
-  padding: 0 2rem;
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
+  height: 100%;
+  align-self: center;
   @media (min-width: ${BREAKPOINTS.md}) {
     grid-template-columns: repeat(12, 1fr);
     padding: 0 2rem;

@@ -4,10 +4,6 @@ import { BREAKPOINTS } from "../constants/breaking-points-styles.constants";
 
 export const ApresentationSection = styled(GridContainer)`
   row-gap: 2.5rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 130rem;
   .main-info {
     grid-column-start: 1;
@@ -59,6 +55,7 @@ export const ApresentationSection = styled(GridContainer)`
       grid-column-end: 13;
       grid-row-start: 1;
       grid-row-end: 4;
+      align-self: stretch;
       max-width: 60rem;
     }
     .social-media {

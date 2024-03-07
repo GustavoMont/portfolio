@@ -18,7 +18,7 @@ interface HomeProps {
   projects: Project[];
 }
 
-export default function Home(props: HomeProps) {
+export default function Home({ whoAmI }: HomeProps) {
   useEffect(() => {
     Aos.init({ duration: 1900 });
   }, []);
@@ -32,6 +32,7 @@ export default function Home(props: HomeProps) {
       <GlobalStyle />
       <Menu />
       <Apresentation />
+      <WhoAmI mainText={whoAmI} />
     </>
   );
 }
