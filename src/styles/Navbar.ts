@@ -15,10 +15,11 @@ export const Navbar = styled.nav`
   height: 3rem;
   z-index: 99;
   color: ${({ theme: { colors } }) => colors.white};
-  padding: 0 4rem;
+  padding: 0 2rem;
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
   @media (min-width: ${BREAKPOINTS.md}) {
     height: 4rem;
+    padding: 0 4rem;
   }
 `;
 

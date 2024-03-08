@@ -8,8 +8,8 @@ interface LayoutProps {
 const Layout = styled.section<LayoutProps>`
   padding: 0 2rem;
   padding-top: 3.5rem;
-  height: ${({ isNotScreenHeight = false }) =>
-    isNotScreenHeight ? "auto" : "100vh"};
+  /* height: ${({ isNotScreenHeight = false }) =>
+    isNotScreenHeight ? "auto" : "100vh"}; */
   min-height: ${({ isNotScreenHeight = false }) =>
     isNotScreenHeight ? "0" : "100vh"};
   color: ${({ theme: { colors } }) => colors.white};

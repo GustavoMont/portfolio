@@ -6,7 +6,6 @@ import SectionObserver from "src/components/common/SectionObserver";
 import Gmail from "src/components/SocialMedia/Gmail";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import { ApresentationSection } from "src/styles/sections/ApresentationSection.style";
 import { H2, H3, Span } from "src/styles/Typograph";

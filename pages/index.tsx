@@ -10,6 +10,7 @@ import Project from "src/models/Project";
 import Service from "src/models/Service";
 import WhatIDo from "src/sections/WhatIDo";
 import Portfolio from "src/sections/Portfolio";
+import Contact from "src/sections/Contact";
 
 interface HomeProps {
   services: Service[];
@@ -34,6 +35,7 @@ export default function Home({ whoAmI, services, projects }: HomeProps) {
       <WhoAmI mainText={whoAmI} />
       <WhatIDo services={services} />
       <Portfolio projects={projects} />
+      <Contact />
     </>
   );
 }
