@@ -42,19 +42,12 @@ export const H3 = styled.h3<Props>`
   font-size: ${({ fontSize = 1.5 }) => `${fontSize}rem`};
 `;
 
-export const Subtitle: React.FC<PropsWithChildren<Heading>> = ({
-  children,
-  className,
-  weight,
-}) => (
-  <p
-    className={`text-subtitle tracking-subtitle ${
-      weight || "font-normal"
-    } font-poppins ${className || ""}`}
-  >
-    {children}
-  </p>
-);
+export const Subtitle = styled.h4<Props>`
+  color: ${({ theme: { colors }, color }) => handleTextColor(colors, color)};
+  font-family: ${({ theme: { fonts } }) => fonts.title};
+  font-size: ${({ fontSize = 1 }) => `${fontSize}rem`};
+  font-weight: 400;
+`;
 
 export const Caption: React.FC<PropsWithChildren<Heading>> = ({
   children,

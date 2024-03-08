@@ -4,22 +4,25 @@ import Service from "src/models/Service";
 import { Caption, Subtitle } from "src/styles/Typograph";
 import WhiteCard from "src/styles/WhiteCard";
 
-interface ServiceCardProps extends Service {
+interface ServiceCardProps {
   isOdd: boolean;
+  service: Service;
 }
 
-export default function ServicesCard(props: ServiceCardProps) {
+export default function ServicesCard({ isOdd, service }: ServiceCardProps) {
   return (
-    <WhiteCard data-aos={props.isOdd ? "fade-up" : "fade-down"}>
-      <div className="w-20 text-light-primary">
-        <img src={props.icon.url} alt={props.title} />
-      </div>
-      <Subtitle className="text-secondary md:text-heading-5 md:tracking-normal">
-        {props.title}
+    <WhiteCard className="service" data-aos={isOdd ? "fade-up" : "fade-down"}>
+      <img src={service.icon.url} alt={service.title} />
+
+      <Subtitle
+        color="secondary"
+        className="text-secondary md:text-heading-5 md:tracking-normal"
+      >
+        {service.title}
       </Subtitle>
       <div>
         <Caption className="text-black md:text-text md:tracking-text">
-          {props.description}
+          {service.description}
         </Caption>
       </div>
     </WhiteCard>
