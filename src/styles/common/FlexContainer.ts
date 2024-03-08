@@ -9,6 +9,7 @@ const FlexContainer = styled.div`
   gap: 1.5rem;
   @media (min-width: 768px) {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 

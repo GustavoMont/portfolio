@@ -22,11 +22,9 @@ export default function WhatIDo({ services }: WhatIDoProps) {
       <WhatIDoSection className="gap-y-8 items-center h-full">
         <H3 className="text-primary md:text-heading-3">O que faço</H3>
         <SectionObserver href="#o-que-faco">
-          <div className="col-start-1 col-end-4 md:col-start-1 md:col-end-13 lg:col-start-3 lg:col-end-11">
-            <FlexContainer className="md:py-4">
-              {services.map(renderCard)}
-            </FlexContainer>
-          </div>
+          <FlexContainer className="service-list md:py-4">
+            {services.map(renderCard)}
+          </FlexContainer>
         </SectionObserver>
       </WhatIDoSection>
     </Layout>

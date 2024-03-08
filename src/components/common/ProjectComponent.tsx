@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import textFormatter from "src/functions/textFormatter";
 import Project from "src/models/Project";
-import PressableItem from "src/styles/common/PressableItem";
 import ProjectCard from "src/styles/common/ProjectCard";
 import { BodyText, H5 } from "src/styles/Typograph";
 import ProjectLink from "./ProjectLink";
 
-interface ProjectComponentProps extends Project {}
+interface ProjectComponentProps {
+  project: Project;
+}
 
-function ProjectComponent(props: ProjectComponentProps) {
+function ProjectComponent({ project }: ProjectComponentProps) {
   const [isDescriptionActive, setIsDescriptionActive] = useState(false);
   return (
     <ProjectCard
-      thumbnail={props.thumbnail.url}
+      className="project"
+      thumbnail={project.thumbnail.url}
       isDescriptionActive={isDescriptionActive}
       onClick={(e) => {
         e.stopPropagation();
@@ -23,7 +25,7 @@ function ProjectComponent(props: ProjectComponentProps) {
     >
       <div className="container overlay title">
         <div>
-          <H5>{props.title}</H5>
+          <H5>{project.title}</H5>
         </div>
       </div>
       <div className="container description overlay">
@@ -31,18 +33,18 @@ function ProjectComponent(props: ProjectComponentProps) {
           <BodyText>
             <span
               dangerouslySetInnerHTML={{
-                __html: textFormatter(props.description),
+                __html: textFormatter(project.description),
               }}
             />
           </BodyText>
         </div>
         <div className="links">
-          <PressableItem>
-            <ProjectLink linkType="deploy" href={props.deployLink} />
-          </PressableItem>
-          <PressableItem>
-            <ProjectLink linkType="github" href={props.githubLink} />
-          </PressableItem>
+          <>
+            <ProjectLink linkType="deploy" href={project.deployLink} />
+          </>
+          <>
+            <ProjectLink linkType="github" href={project.githubLink} />
+          </>
         </div>
       </div>
     </ProjectCard>

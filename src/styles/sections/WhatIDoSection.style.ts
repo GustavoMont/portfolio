@@ -10,6 +10,10 @@ export const WhatIDoSection = styled(GridContainer)`
     grid-column-start: 1;
     grid-column-end: 4;
   }
+  .service-list {
+    justify-content: space-evenly;
+    max-width: 180rem;
+  }
   .service {
     width: 100%;
     max-width: 500px;

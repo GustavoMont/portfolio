@@ -3,9 +3,10 @@ import ProjectComponent from "src/components/common/ProjectComponent";
 import Project from "src/models/Project";
 import FlexContainer from "src/styles/common/FlexContainer";
 import Layout from "src/styles/common/Layout";
-import { H5 } from "src/styles/Typograph";
+import { H3, H5 } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
 import GridContainer from "src/styles/common/GridContainer";
+import { PortfolioSection } from "src/styles/sections/Portfolio.style";
 
 interface PortfolioProps {
   projects: Project[];
@@ -13,21 +14,17 @@ interface PortfolioProps {
 
 export default function Portfolio({ projects }: PortfolioProps) {
   return (
-    <Layout id="portfolio">
-      <GridContainer className="justify-center gap-y-6">
-        <div className="col-start-1 col-span-4">
-          <H5 className="text-primary">Meus trabalhos:</H5>
-        </div>
+    <Layout isNotScreenHeight id="portfolio">
+      <PortfolioSection className="justify-center gap-y-6">
+        <H3 className="text-primary">Meus trabalhos:</H3>
         <SectionObserver href="#portfolio">
-          <div className="col-start-1 col-end-4 md:col-span-12 justify-self-center w-full">
-            <FlexContainer>
-              {projects.map((project) => (
-                <ProjectComponent {...project} key={project.id} />
-              ))}
-            </FlexContainer>
-          </div>
+          <FlexContainer className="project-list">
+            {projects.map((project) => (
+              <ProjectComponent project={project} key={project.id} />
+            ))}
+          </FlexContainer>
         </SectionObserver>
-      </GridContainer>
+      </PortfolioSection>
     </Layout>
   );
 }

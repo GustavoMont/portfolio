@@ -1,18 +1,21 @@
 import styled from "styled-components";
 import { BREAKPOINTS } from "./constants/breaking-points-styles.constants";
+import { MAX_WIDTH } from "./constants/size.constants";
 
 export const Navbar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  max-width: ${MAX_WIDTH}px;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
   height: 3rem;
   z-index: 99;
   color: ${({ theme: { colors } }) => colors.white};
-  padding: 0 2rem;
+  padding: 0 4rem;
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
   @media (min-width: ${BREAKPOINTS.md}) {
     height: 4rem;
