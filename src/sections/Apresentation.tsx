@@ -1,67 +1,51 @@
 /* eslint-disable @next/next/no-img-element */
 import { useRouter } from "next/router";
 import React from "react";
+import { IconButton } from "src/components/common/IconButton";
 import SectionObserver from "src/components/common/SectionObserver";
 import Gmail from "src/components/SocialMedia/Gmail";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Button from "src/styles/Button";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
-import PressableItem from "src/styles/common/PressableItem";
-import { ButtonText, H5, Subtitle } from "src/styles/Typograph";
+import { ApresentationSection } from "src/styles/sections/ApresentationSection.style";
+import { H2, H3, Span } from "src/styles/Typograph";
 
 export default function Apresentation() {
   const router = useRouter();
   return (
-    <Layout className="flex items-center">
-      <GridContainer className="items-center">
-        <div className="col-start-1 col-end-4 w-full mt-11 md:col-start-1 md:col-end-7">
-          <div data-aos="fade-up">
-            <H5 className="md:text-heading-4 md:tracking-heading-2 md:font-light">
-              Olá, Sou o<span className="text-primary"> Gustavo</span>
-            </H5>
-          </div>
-          <div>
-            <SectionObserver href="">
-              <div data-aos="fade-left">
-                <Subtitle className="md:text-heading-5 md:tracking-heading-4">
-                  Desenvolvedor Web
-                </Subtitle>
-              </div>
-            </SectionObserver>
-          </div>
-          <div className="flex justify-center">
-            <Button
-              border="fill"
-              color="primary"
-              rounded="pill"
-              className="mt-9"
-              hoverColor="white"
-              onClick={() => router.push("#contatos")}
-            >
-              <ButtonText className="leading-none md:text-subtitle md:font-poppins">
-                Contate-me
-              </ButtonText>
-            </Button>
-          </div>
+    <Layout>
+      <ApresentationSection>
+        <div data-aos="fade-up" className="main-info">
+          <H2 data-aos="fade-up">
+            Olá, Sou o<Span color="primary"> Gustavo</Span>
+          </H2>
+
+          <SectionObserver href="">
+            <H3 data-aos="fade-left">Desenvolvedor Web</H3>
+          </SectionObserver>
+
+          <Button
+            data-aos="fade-up"
+            border="fill"
+            color="primary"
+            rounded="pill"
+            hoverColor="white"
+            onClick={() => router.push("#contatos")}
+          >
+            Contate-me
+          </Button>
         </div>
-        <div className="col-start-1 col-end-4 mt-10 md:mt-0 md:col-start-8 md:col-end-13">
-          <img
-            data-aos="fade-right"
-            src={"man-sit-desk.svg"}
-            alt="Main Image"
-            className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
-          />
-        </div>
-        <div className="col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
-          <PressableItem>
+
+        <img data-aos="fade-up" src={"man-sit-desk.svg"} alt="Main Image" />
+        <div className="social-media">
+          <IconButton aria-label="ir para linkedin">
             <Linkedin />
-          </PressableItem>
-          <PressableItem>
+          </IconButton>
+          <IconButton aria-label="entrar em contato por e-mail">
             <Gmail />
-          </PressableItem>
+          </IconButton>
         </div>
-      </GridContainer>
+      </ApresentationSection>
     </Layout>
   );
 }

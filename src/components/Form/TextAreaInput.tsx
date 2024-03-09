@@ -1,17 +1,18 @@
 import React from "react";
 import Input from "src/models/Input";
 import TextArea from "src/styles/form/TextArea";
+import styled from "styled-components";
 
-export default function TextAreaInput(props: Input) {
+export default function TextAreaInput({ label, name, onChange, value }: Input) {
   return (
-    <div className="flex flex-col">
-      <label htmlFor={props.name}>{props.label}</label>
-      <TextArea
-        className="text-black"
-        value={props.value}
-        onChange={props.onChange}
-        name={props.name}
-      ></TextArea>
-    </div>
+    <TextAreaContainer>
+      <label htmlFor={name}>{label}</label>
+      <TextArea value={value} onChange={onChange} name={name}></TextArea>
+    </TextAreaContainer>
   );
 }
+
+const TextAreaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;

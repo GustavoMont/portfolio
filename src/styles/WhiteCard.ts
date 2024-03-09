@@ -8,7 +8,8 @@ const WhiteCard = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  background-color: var(--white);
+  background-color: ${({ theme: { colors } }) => colors.white};
+  color: ${({ theme: { colors } }) => colors.black};
 `;
 
 export default WhiteCard;

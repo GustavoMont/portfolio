@@ -1,15 +1,15 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import InputText from "src/components/Form/InputText";
 import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
-import GridContainer from "src/styles/common/GridContainer";
 import Layout from "src/styles/common/Layout";
 import Spin from "src/components/common/Spin";
-import { BodyText, ButtonText, H5 } from "src/styles/Typograph";
+import { BodyText, ButtonText, H3 } from "src/styles/Typograph";
 import Linkedin from "src/components/SocialMedia/Linkedin";
 import Gmail from "src/components/SocialMedia/Gmail";
-import PressableItem from "src/styles/common/PressableItem";
 import SectionObserver from "src/components/common/SectionObserver";
+import { IconButton } from "src/components/common/IconButton";
+import { ContactSection } from "src/styles/sections/ContactSection.style";
 
 export default function Contact() {
   const INITIAL_FORMDATA = {
@@ -18,7 +18,6 @@ export default function Contact() {
     subject: "",
     message: "",
   };
-  const ref = useRef(null);
   const [formData, setFormData] = useState(INITIAL_FORMDATA);
   const [isLoading, setIsLoading] = useState(false);
   const [feedBack, setFeedBack] = useState({
@@ -31,7 +30,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setFormData({
       ...formData,
@@ -72,89 +71,78 @@ export default function Contact() {
 
   return (
     <Layout id="contatos">
-      <GridContainer className="items-center">
-        <div className="col-start-1 col-end-4 md:col-start-3 md:col-end-11 flex flex-col items-center gap-6">
+      <ContactSection className="items-center">
+        <div className="contact-container">
           <div data-aos="fade-right">
             <SectionObserver href="#contatos">
-              <H5 className="text-primary md:text-heading-4 md:tracking-heading-4">
-                Vamos bater um papo
-              </H5>
+              <H3>Vamos bater um papo</H3>
             </SectionObserver>
           </div>
-          <div className="w-full md:max-w-lg" ref={ref}>
-            <form
-              action="https://formsubmit.co/lgmluisgm@gmail.com"
-              method="POST"
-              className="flex flex-col gap-4 w-full"
-              data-aos="fade-up"
-              onSubmit={onSubmit}
-            >
-              {feedBack.visible && (
-                <div
-                  className={`${
-                    feedBack.isError ? "text-dark-secondary" : "text-green-500"
-                  }`}
-                >
-                  <BodyText className="text-center">
-                    {feedBack.message}
-                  </BodyText>
-                </div>
-              )}
-              <div className="flex flex-col gap-4 md:flex-row">
-                <InputText
-                  required
-                  label="Nome: "
-                  name="name"
-                  value={formData.name}
-                  onChange={changeValue}
-                />
-                <InputText
-                  required
-                  label="E-mail: "
-                  name="email"
-                  value={formData.email}
-                  onChange={changeValue}
-                  type="email"
-                />
+          <form
+            action="https://formsubmit.co/lgmluisgm@gmail.com"
+            method="POST"
+            data-aos="fade-up"
+            onSubmit={onSubmit}
+          >
+            {feedBack.visible && (
+              <div>
+                <BodyText>{feedBack.message}</BodyText>
               </div>
-              <InputText
-                required
-                label="Assunto: "
-                name="subject"
-                value={formData.subject}
-                onChange={changeValue}
-                type="text"
-              />
-              <TextAreaInput
-                required
-                label="Mensagem: "
-                name="message"
-                onChange={changeValue}
-                value={formData.message}
-              />
-              <Button
-                border="fill"
-                color="primary"
-                rounded="default"
-                disabled={isLoading}
-              >
-                <div className="flex gap-4 items-center justify-center">
-                  {isLoading && <Spin />}
-                  <ButtonText>Enviar mensagem</ButtonText>
-                </div>
-              </Button>
-            </form>
-          </div>
-          <div className="flex gap-6">
-            <PressableItem>
+            )}
+
+            <InputText
+              required
+              label="Nome: "
+              name="name"
+              value={formData.name}
+              onChange={changeValue}
+            />
+            <InputText
+              required
+              label="E-mail: "
+              name="email"
+              value={formData.email}
+              onChange={changeValue}
+              type="email"
+            />
+
+            <InputText
+              required
+              label="Assunto: "
+              name="subject"
+              value={formData.subject}
+              onChange={changeValue}
+              type="text"
+            />
+            <TextAreaInput
+              required
+              label="Mensagem: "
+              name="message"
+              onChange={changeValue}
+              value={formData.message}
+            />
+            <Button
+              border="fill"
+              color="primary"
+              rounded="default"
+              disabled={isLoading}
+            >
+              <div className="flex gap-4 items-center justify-center">
+                {isLoading && <Spin />}
+                <ButtonText>Enviar mensagem</ButtonText>
+              </div>
+            </Button>
+          </form>
+          <div className="contacts">
+            <IconButton aria-label="ir para linkedin">
               <Linkedin />
-            </PressableItem>
-            <PressableItem>
+            </IconButton>
+            <IconButton aria-label="entrar em contato por e-mail">
               <Gmail />
-            </PressableItem>
+            </IconButton>
           </div>
         </div>
-      </GridContainer>
+      </ContactSection>
     </Layout>
   );
 }

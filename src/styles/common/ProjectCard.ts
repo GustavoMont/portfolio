@@ -11,7 +11,7 @@ const ProjectCard = styled.div<ProjectCard>`
   background-image: url(${(props) => props.thumbnail});
   overflow: hidden;
   width: 100%;
-  max-width: 400px;
+  max-width: 28rem;
   height: 250px;
   border-radius: 0.5rem;
   box-shadow: 0px 1px 4px #ff4878;
@@ -24,6 +24,7 @@ const ProjectCard = styled.div<ProjectCard>`
     justify-content: center;
     align-items: center;
     padding: 1.2rem;
+    flex-direction: column;
   }
   .title {
     opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 0 : 1)};
@@ -43,7 +44,7 @@ const ProjectCard = styled.div<ProjectCard>`
     opacity: ${({ isDescriptionActive }) => (!isDescriptionActive ? 0.5 : 1)};
     transition: 0.5s ease all;
     user-select: none;
-    flex-direction: column;
+    margin-bottom: 0.5rem;
     .text {
       flex: 1;
       display: flex;
@@ -52,14 +53,18 @@ const ProjectCard = styled.div<ProjectCard>`
     }
     .links {
       display: flex;
+      margin-top: 1rem;
       justify-content: space-between;
       align-items: center;
       width: 100%;
+      svg {
+        width: 1.5rem;
+      }
       .link {
         cursor: pointer;
         transition: all 0.3s ease;
         &:hover {
-          color: var(--light-primary);
+          color: ${({ theme: { colors } }) => colors["light-primary"]};
         }
       }
     }

@@ -3,54 +3,47 @@ import UnderlinedLink from "src/styles/common/UnderlinedLink";
 import { ButtonText } from "src/styles/Typograph";
 import { CodeIcon, GithubIcon } from "../icons";
 
-type linkType = "deploy" | "github";
+type LinkType = "deploy" | "github";
 
 interface ProjectLinkProps {
-  linkType: linkType;
+  linkType: LinkType;
   href?: string;
 }
 
-interface LinkTypeHandler {
+interface LinkContent {
   icon: JSX.Element;
   text: string;
 }
 
-function ProjectLink(props: ProjectLinkProps) {
-  const linkTypeHandler = linkTypeHandlerFactory(props.linkType);
+type LinkHandler = {
+  [key in LinkType]: LinkContent;
+};
 
-  function linkTypeHandlerFactory(type: linkType): LinkTypeHandler {
-    switch (type) {
-      case "deploy":
-        return {
-          icon: <CodeIcon />,
-          text: "Confira aqui",
-        };
-      case "github":
-        return {
-          icon: <GithubIcon />,
-          text: "Saiba mais",
-        };
-      default:
-        return {
-          icon: <React.Fragment />,
-          text: "",
-        };
-    }
-  }
-  if (!props.href) {
+function ProjectLink({ linkType, href }: ProjectLinkProps) {
+  const linkTypeHandler: LinkHandler = {
+    deploy: {
+      icon: <CodeIcon />,
+      text: "Confira aqui",
+    },
+    github: {
+      icon: <GithubIcon />,
+      text: "Saiba mais",
+    },
+  };
+  const linkContent = linkTypeHandler[linkType];
+
+  if (!href) {
     return <React.Fragment />;
   }
   return (
     <UnderlinedLink
+      className="project-link link"
       target={"_blank"}
       lineColor="primary"
-      href={props.href || ""}
-      passHref
+      href={href || ""}
     >
-      <div className="flex items-center justify-center gap-2 align-middle link">
-        <div>{linkTypeHandler.icon}</div>
-        <ButtonText className="mt-0.5">{linkTypeHandler.text}</ButtonText>
-      </div>
+      <div>{linkContent.icon}</div>
+      <ButtonText className="mt-0.5">{linkContent.text}</ButtonText>
     </UnderlinedLink>
   );
 }

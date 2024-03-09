@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { ColorKey } from "./colors/colors.type";
 
 type borderType = "fill" | "outlined";
 type roundedType = "default" | "pill";
 
-type Color = "primary" | "secondary";
-type HoverColor = "white" | "primary" | "secondary";
+type Color = Extract<ColorKey, "primary" | "secondary">;
+type HoverColor = Extract<ColorKey, "primary" | "secondary" | "white">;
 
 interface ButtonProps {
   border: borderType;
@@ -19,54 +20,59 @@ type ButtonColorVariants = {
   hover?: HoverColor;
 };
 
-function handleColor(border: borderType, colors: ButtonColorVariants) {
+function handleColor(
+  border: borderType,
+  colors: Required<ButtonColorVariants>,
+) {
   switch (border) {
     case "fill":
-      return `var(--${colors.main})`;
+      return colors.main;
     default:
-      return `var(--${colors.hover})`;
+      return colors.hover;
   }
 }
 
 const Button = styled.button<ButtonProps>`
   padding: 0.5rem 1rem;
-  background-color: ${(props) => {
-    if (props.disabled && props.border !== "outlined") {
-      return "#404040";
+  background-color: ${({ disabled, border, theme: { colors }, color }) => {
+    if (disabled && border !== "outlined") {
+      return colors["dark-white"];
     }
-    return props.border === "outlined"
-      ? "transparent"
-      : `var(--${props.color})`;
+    return border === "outlined" ? "transparent" : colors[color];
   }};
-  border-radius: ${(props) => (props.rounded === "default" ? "4px" : "999px")};
-  border: ${(props) =>
-    props.border === "fill" ? "none" : `var(--${props.color}) 1px solid`};
-  color: ${(props) =>
-    props.border === "outlined" ? `var(--${props.color})` : "var(--white)"};
+  border-radius: ${({ rounded }) => (rounded === "default" ? "4px" : "999px")};
+  border: ${({ border, color, theme: { colors } }) =>
+    border === "fill" ? "none" : `${colors[color]} 1px solid`};
+  color: ${({ border, color, theme: { colors } }) =>
+    colors[border === "outlined" ? color : "white"]};
   transition: all 0.5s ease;
-  pointer-events: ${(props) => (props.disabled ? "none" : "all")};
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "all")};
   cursor: pointer;
+  font-family: Poppins, sans-serif;
   :active {
     transform: scale(0.95);
     opacity: 0.85;
   }
   :hover {
-    border: ${(props) =>
-      props.border === "fill"
-        ? "none"
-        : `var(--${props.hoverColor}) 1px solid`};
-    color: ${(props) =>
-      handleColor(props.border, {
-        main: props.color,
-        hover: props.hoverColor,
-      })};
-    background-color: ${(props) => {
-      if (props.disabled && props.border !== "outlined") {
-        return "#404040";
+    border: ${({ border, hoverColor = "white", theme: { colors } }) =>
+      border === "fill" ? "none" : `${colors[hoverColor]} 1px solid`};
+    color: ${({ border, color, hoverColor = "white", theme: { colors } }) =>
+      colors[
+        handleColor(border, {
+          main: color,
+          hover: hoverColor,
+        })
+      ]};
+    background-color: ${({
+      border,
+      disabled,
+      hoverColor = "white",
+      theme: { colors },
+    }) => {
+      if (disabled && border !== "outlined") {
+        return colors["dark-white"];
       }
-      return props.border === "outlined"
-        ? "transparent"
-        : `var(--${props.hoverColor || "white"})`;
+      return border === "outlined" ? "transparent" : colors[hoverColor];
     }};
   }
 `;

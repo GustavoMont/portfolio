@@ -1,15 +1,22 @@
 import styled from "styled-components";
+import { BREAKPOINTS } from "../constants/breaking-points-styles.constants";
 
 interface LayoutProps {
   isNotScreenHeight?: boolean;
 }
 
 const Layout = styled.section<LayoutProps>`
+  padding: 0 2rem;
   padding-top: 3.5rem;
-  min-height: ${(props) => (props.isNotScreenHeight ? "0" : "100vh")};
-  color: var(--white);
-  background-color: #000000cc;
-  @media (min-width: 768px) {
+  display: grid;
+  min-height: ${({ isNotScreenHeight = false }) =>
+    isNotScreenHeight ? "0" : "100vh"};
+  color: ${({ theme: { colors } }) => colors.white};
+  background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
+  img {
+    width: 85%;
+  }
+  @media (min-width: ${BREAKPOINTS.md}) {
     padding-top: 4rem;
   }
 `;

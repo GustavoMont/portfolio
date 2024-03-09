@@ -1,23 +1,37 @@
 import React from "react";
 import InputModel from "src/models/Input";
 import Input from "src/styles/form/Input";
+import styled from "styled-components";
 
 interface InputTextProps extends InputModel {
   type?: "text" | "email";
 }
 
-export default function InputText(props: InputTextProps) {
+export default function InputText({
+  label,
+  name,
+  onChange,
+  value,
+  required,
+  type,
+}: InputTextProps) {
   return (
-    <div className="flex flex-col w-full">
-      <label htmlFor={props.name}>{props.label}</label>
+    <InputContainer>
+      <label htmlFor={name}>{label}</label>
       <Input
-        required={props.required}
+        required={required}
         className="text-black"
-        onChange={props.onChange}
-        value={props.value}
-        name={props.name}
-        type={props.type || "text"}
+        onChange={onChange}
+        value={value}
+        name={name}
+        type={type || "text"}
       />
-    </div>
+    </InputContainer>
   );
 }
+
+const InputContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;

@@ -6,11 +6,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import Apresentation from "src/sections/Apresentation";
 import WhoAmI from "src/sections/WhoAmI";
+import Project from "src/models/Project";
+import Service from "src/models/Service";
 import WhatIDo from "src/sections/WhatIDo";
 import Portfolio from "src/sections/Portfolio";
 import Contact from "src/sections/Contact";
-import Service from "src/models/Service";
-import Project from "src/models/Project";
 
 interface HomeProps {
   services: Service[];
@@ -18,7 +18,7 @@ interface HomeProps {
   projects: Project[];
 }
 
-export default function Home(props: HomeProps) {
+export default function Home({ whoAmI, services, projects }: HomeProps) {
   useEffect(() => {
     Aos.init({ duration: 1900 });
   }, []);
@@ -32,9 +32,9 @@ export default function Home(props: HomeProps) {
       <GlobalStyle />
       <Menu />
       <Apresentation />
-      <WhoAmI mainText={props.whoAmI} />
-      <WhatIDo services={props.services} />
-      <Portfolio projects={props.projects} />
+      <WhoAmI mainText={whoAmI} />
+      <WhatIDo services={services} />
+      <Portfolio projects={projects} />
       <Contact />
     </>
   );

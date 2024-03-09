@@ -1,11 +1,17 @@
 import styled from "styled-components";
+import { ColorKey } from "./colors/colors.type";
 
-const Logo = styled.h1`
+type Props = {
+  color?: ColorKey;
+};
+
+const Logo = styled.h1<Props>`
   font-family: "Poppins", sans-serif;
   font-size: 23px;
   font-weight: bold;
   width: fit-content;
   height: 100%;
+  color: ${({ color = "white", theme: { colors } }) => colors[color]};
   cursor: pointer;
   @media (min-width: 768px) {
     font-size: 46px;
@@ -25,7 +31,7 @@ const Logo = styled.h1`
     vertical-align: middle;
     &::after {
       content: attr(data-text);
-      color: var(--secondary);
+      color: ${({ theme: { colors } }) => colors.secondary};
       position: absolute;
       z-index: -1;
       left: 0;
