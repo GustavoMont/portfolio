@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import textFormatter from "src/functions/textFormatter";
 import Project from "src/models/Project";
 import ProjectCard from "src/styles/common/ProjectCard";
 import { BodyText, H5 } from "src/styles/Typograph";
 import ProjectLink from "./ProjectLink";
+import { parseToHtml } from "src/functions/parseToHtml";
 
 interface ProjectComponentProps {
   project: Project;
@@ -33,7 +33,7 @@ function ProjectComponent({ project }: ProjectComponentProps) {
           <BodyText>
             <span
               dangerouslySetInnerHTML={{
-                __html: textFormatter(project.description),
+                __html: parseToHtml(project.description),
               }}
             />
           </BodyText>

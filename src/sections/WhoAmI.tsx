@@ -2,9 +2,9 @@
 import React from "react";
 import Layout from "src/styles/common/Layout";
 import { Caption, H3, Span } from "src/styles/Typograph";
-import textFormatter from "src/functions/textFormatter";
 import SectionObserver from "src/components/common/SectionObserver";
 import { WhoAmISection } from "src/styles/sections/WhoAmISection.style";
+import { parseToHtml } from "src/functions/parseToHtml";
 
 interface WhoIAmProps {
   mainText: string;
@@ -30,7 +30,7 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
                 <Caption>
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: textFormatter(mainText),
+                      __html: parseToHtml(mainText),
                     }}
                   />
                 </Caption>
