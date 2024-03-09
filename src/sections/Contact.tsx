@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import InputText from "src/components/Form/InputText";
 import TextAreaInput from "src/components/Form/TextAreaInput";
 import Button from "src/styles/Button";
@@ -18,7 +18,6 @@ export default function Contact() {
     subject: "",
     message: "",
   };
-  const ref = useRef(null);
   const [formData, setFormData] = useState(INITIAL_FORMDATA);
   const [isLoading, setIsLoading] = useState(false);
   const [feedBack, setFeedBack] = useState({
@@ -31,7 +30,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setFormData({
       ...formData,
@@ -97,23 +96,23 @@ export default function Contact() {
                 <BodyText className="text-center">{feedBack.message}</BodyText>
               </div>
             )}
-            <div className="flex flex-col gap-4 md:flex-row">
-              <InputText
-                required
-                label="Nome: "
-                name="name"
-                value={formData.name}
-                onChange={changeValue}
-              />
-              <InputText
-                required
-                label="E-mail: "
-                name="email"
-                value={formData.email}
-                onChange={changeValue}
-                type="email"
-              />
-            </div>
+
+            <InputText
+              required
+              label="Nome: "
+              name="name"
+              value={formData.name}
+              onChange={changeValue}
+            />
+            <InputText
+              required
+              label="E-mail: "
+              name="email"
+              value={formData.email}
+              onChange={changeValue}
+              type="email"
+            />
+
             <InputText
               required
               label="Assunto: "

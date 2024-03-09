@@ -12,6 +12,7 @@ export const ApresentationSection = styled(GridContainer)`
     flex-direction: column;
     gap: 0.5rem;
     align-items: flex-start;
+    align-self: center;
   }
   .social-media {
     grid-column-start: 2;

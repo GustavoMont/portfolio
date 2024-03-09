@@ -3,9 +3,8 @@ import ProjectComponent from "src/components/common/ProjectComponent";
 import Project from "src/models/Project";
 import FlexContainer from "src/styles/common/FlexContainer";
 import Layout from "src/styles/common/Layout";
-import { H3, H5 } from "src/styles/Typograph";
+import { H3 } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
-import GridContainer from "src/styles/common/GridContainer";
 import { PortfolioSection } from "src/styles/sections/Portfolio.style";
 
 interface PortfolioProps {

@@ -6,14 +6,14 @@ export const WhoAmISection = styled(GridContainer)`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-
+  justify-content: center;
   .image-container {
     max-width: 30rem;
     width: 100%;
     margin: 0 auto;
   }
 
-  @media (min-width: ${BREAKPOINTS.md}) {
+  @media (min-width: ${BREAKPOINTS.lg}) {
     display: grid;
     align-items: center;
     .image-container {
