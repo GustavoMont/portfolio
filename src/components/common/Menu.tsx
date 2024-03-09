@@ -85,11 +85,7 @@ export default function Menu() {
           <NavbarListContainer>{optionList}</NavbarListContainer>
         </Navbar>
       </header>
-      <MobileMenu
-        className="bg-primary text-white md:hidden"
-        active={activeMobileMenu}
-        ref={menuRef}
-      >
+      <MobileMenu active={activeMobileMenu} ref={menuRef}>
         <NavbarIconContainer id="close">
           <IconButton aria-label="fechar menu" onClick={closeMenu}>
             <CloseIcon />

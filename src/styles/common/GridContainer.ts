@@ -9,7 +9,6 @@ type Props = {
 
 const GridContainer = styled.div<Props>`
   display: grid;
-  grid-template-rows: auto;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   height: 100%;
