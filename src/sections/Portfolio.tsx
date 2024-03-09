@@ -13,12 +13,14 @@ interface PortfolioProps {
 export default function Portfolio({ projects }: PortfolioProps) {
   return (
     <Layout isNotScreenHeight id="portfolio">
-      <PortfolioSection className="justify-center gap-y-6">
-        <H3 className="text-primary">Meus trabalhos:</H3>
+      <PortfolioSection>
+        <H3>Meus trabalhos:</H3>
         <SectionObserver href="#portfolio">
           <ul className="project-list">
             {projects.map((project) => (
-              <ProjectComponent project={project} key={project.id} />
+              <li key={project.id}>
+                <ProjectComponent project={project} />
+              </li>
             ))}
           </ul>
         </SectionObserver>

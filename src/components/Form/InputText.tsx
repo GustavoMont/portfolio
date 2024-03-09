@@ -16,7 +16,7 @@ export default function InputText({
   type,
 }: InputTextProps) {
   return (
-    <InputContainer className="flex flex-col w-full">
+    <InputContainer>
       <label htmlFor={name}>{label}</label>
       <Input
         required={required}

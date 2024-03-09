@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setFormData({
       ...formData,
@@ -72,28 +72,21 @@ export default function Contact() {
   return (
     <Layout id="contatos">
       <ContactSection className="items-center">
-        <div className="contact-container col-start-1 col-end-4 md:col-start-3 md:col-end-11 flex flex-col items-center gap-6">
+        <div className="contact-container">
           <div data-aos="fade-right">
             <SectionObserver href="#contatos">
-              <H3 className="text-primary md:text-heading-4 md:tracking-heading-4">
-                Vamos bater um papo
-              </H3>
+              <H3>Vamos bater um papo</H3>
             </SectionObserver>
           </div>
           <form
             action="https://formsubmit.co/lgmluisgm@gmail.com"
             method="POST"
-            className="flex flex-col gap-4 w-full"
             data-aos="fade-up"
             onSubmit={onSubmit}
           >
             {feedBack.visible && (
-              <div
-                className={`${
-                  feedBack.isError ? "text-dark-secondary" : "text-green-500"
-                }`}
-              >
-                <BodyText className="text-center">{feedBack.message}</BodyText>
+              <div>
+                <BodyText>{feedBack.message}</BodyText>
               </div>
             )}
 

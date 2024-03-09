@@ -21,12 +21,7 @@ export default function Apresentation() {
           </H2>
 
           <SectionObserver href="">
-            <H3
-              data-aos="fade-left"
-              className="md:text-heading-5 md:tracking-heading-4"
-            >
-              Desenvolvedor Web
-            </H3>
+            <H3 data-aos="fade-left">Desenvolvedor Web</H3>
           </SectionObserver>
 
           <Button
@@ -41,13 +36,8 @@ export default function Apresentation() {
           </Button>
         </div>
 
-        <img
-          data-aos="fade-up"
-          src={"man-sit-desk.svg"}
-          alt="Main Image"
-          className="w-10/12 mx-auto motion-safe:animate-bounce-slow"
-        />
-        <div className="social-media col-start-1 col-end-4 w-full flex justify-center gap-6 md:col-start-1 md:col-end-7">
+        <img data-aos="fade-up" src={"man-sit-desk.svg"} alt="Main Image" />
+        <div className="social-media">
           <IconButton aria-label="ir para linkedin">
             <Linkedin />
           </IconButton>

@@ -5,14 +5,9 @@ import styled from "styled-components";
 
 export default function TextAreaInput({ label, name, onChange, value }: Input) {
   return (
-    <TextAreaContainer className="flex flex-col">
+    <TextAreaContainer>
       <label htmlFor={name}>{label}</label>
-      <TextArea
-        className="text-black"
-        value={value}
-        onChange={onChange}
-        name={name}
-      ></TextArea>
+      <TextArea value={value} onChange={onChange} name={name}></TextArea>
     </TextAreaContainer>
   );
 }
