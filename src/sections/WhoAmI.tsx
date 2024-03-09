@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Layout from "src/styles/common/Layout";
-import { Caption, H3, Span } from "src/styles/Typograph";
+import { H3, Span } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
 import { WhoAmISection } from "src/styles/sections/WhoAmISection.style";
 import { parseToHtml } from "src/functions/parseToHtml";
@@ -26,15 +26,13 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
               </H3>
             </div>
             <SectionObserver href="#quem-sou">
-              <div data-aos="fade-right" className="about-me">
-                <Caption>
-                  <span
-                    dangerouslySetInnerHTML={{
-                      __html: parseToHtml(mainText),
-                    }}
-                  />
-                </Caption>
-              </div>
+              <div
+                data-aos="fade-right"
+                className="about-me"
+                dangerouslySetInnerHTML={{
+                  __html: parseToHtml(mainText),
+                }}
+              />
             </SectionObserver>
           </div>
         </div>
