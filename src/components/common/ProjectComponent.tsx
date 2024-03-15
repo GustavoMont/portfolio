@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Project from "src/models/Project";
 import ProjectCard from "src/styles/common/ProjectCard";
-import { BodyText, H5 } from "src/styles/Typograph";
+import { H5 } from "src/styles/Typograph";
 import ProjectLink from "./ProjectLink";
 import { parseToHtml } from "src/functions/parseToHtml";
 
@@ -30,13 +30,11 @@ function ProjectComponent({ project }: ProjectComponentProps) {
       </div>
       <div className="container description overlay">
         <div className="text">
-          <BodyText>
-            <span
-              dangerouslySetInnerHTML={{
-                __html: parseToHtml(project.description),
-              }}
-            />
-          </BodyText>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: parseToHtml(project.description),
+            }}
+          />
         </div>
         <div className="links">
           <>

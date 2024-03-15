@@ -5,5 +5,6 @@ export const parseToHtml = (text: string) => {
   if (text.includes("*/*")) {
     return textFormatter(text);
   }
-  return markdown(text).toString();
+  const parsed = markdown(text).toString();
+  return parsed;
 };
