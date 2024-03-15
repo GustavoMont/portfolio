@@ -38,6 +38,9 @@ const GlobalStyle = createGlobalStyle`
     border: none;
     color: inherit;
   }
+  p, span {
+    font-family: ${({ theme: { fonts } }) => fonts.title};
+  }
 `;
 
 export default GlobalStyle;

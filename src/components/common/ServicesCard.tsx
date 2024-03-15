@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
+import { parseToHtml } from "src/functions/parseToHtml";
 import Service from "src/models/Service";
-import { Caption, Subtitle } from "src/styles/Typograph";
+import { Subtitle } from "src/styles/Typograph";
 import WhiteCard from "src/styles/WhiteCard";
 
 interface ServiceCardProps {
@@ -21,9 +22,11 @@ export default function ServicesCard({ isOdd, service }: ServiceCardProps) {
         {service.title}
       </Subtitle>
       <div>
-        <Caption className="text-black md:text-text md:tracking-text">
-          {service.description}
-        </Caption>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: parseToHtml(service.description),
+          }}
+        />
       </div>
     </WhiteCard>
   );
