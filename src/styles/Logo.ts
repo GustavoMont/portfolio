@@ -1,20 +1,32 @@
 import styled from "styled-components";
 import { ColorKey } from "./colors/colors.type";
+import { BREAKPOINTS } from "./constants/breaking-points-styles.constants";
 
 type Props = {
   color?: ColorKey;
 };
 
 const Logo = styled.h1<Props>`
-  font-family: "Poppins", sans-serif;
+  font-family: ${({ theme: { fonts } }) => fonts.title};
   font-size: 23px;
   font-weight: bold;
   width: fit-content;
   height: 100%;
   color: ${({ color = "white", theme: { colors } }) => colors[color]};
   cursor: pointer;
-  @media (min-width: 768px) {
+  @media (min-width: ${BREAKPOINTS.md}) {
     font-size: 46px;
+  }
+  &:hover {
+    span::after {
+      color: ${({ theme: { colors } }) => colors["light-primary"]};
+    }
+    @media (min-width: ${BREAKPOINTS.lg}) {
+      span,
+      span::after {
+        width: 13rem;
+      }
+    }
   }
   span {
     -webkit-touch-callout: none;
@@ -29,7 +41,9 @@ const Logo = styled.h1<Props>`
     width: 19px;
     margin: 0;
     vertical-align: middle;
+    transition: 0.2s ease-in-out all;
     &::after {
+      transition: inherit;
       content: attr(data-text);
       color: ${({ theme: { colors } }) => colors.secondary};
       position: absolute;
@@ -37,10 +51,10 @@ const Logo = styled.h1<Props>`
       left: 0;
       top: 1px;
     }
-    @media (min-width: 768px) {
+    @media (min-width: ${BREAKPOINTS.md}) {
       width: 38px;
       &::after {
-        top: 3px;
+        top: 0.25rem;
       }
     }
   }
