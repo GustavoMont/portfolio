@@ -1,18 +1,17 @@
 import Aos from "aos";
 import SectionProvider from "data/provider/SectionProvider";
+import { ThemeProvider } from "data/provider/ThemeProvider";
 import { AppProps } from "next/app";
 
 import { useEffect } from "react";
 import "src/styles/_app.css";
-import { lightTheme } from "src/styles/theme/main.theme";
-import { ThemeProvider } from "styled-components";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     Aos.init({});
   }, []);
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider>
       <SectionProvider>
         <Component {...pageProps} />
       </SectionProvider>

@@ -38,6 +38,10 @@ const ProjectCard = styled.div<ProjectCard>`
       ${({ isDescriptionActive }) => (isDescriptionActive ? 0.9 : 0.7)}
     );
   }
+  -webkit-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
+  box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
+
   .description {
     position: absolute;
     top: ${({ isDescriptionActive }) => (isDescriptionActive ? "0" : "100%")};

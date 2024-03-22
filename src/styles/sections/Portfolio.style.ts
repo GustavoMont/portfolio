@@ -13,6 +13,7 @@ export const PortfolioSection = styled(GridContainer)`
   ul.project-list {
     grid-column-start: 1;
     grid-column-end: 4;
+    color: ${({ theme: { colors } }) => colors.white};
     .project {
       width: 100%;
       .project-link {

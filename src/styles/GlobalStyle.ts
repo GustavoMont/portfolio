@@ -21,15 +21,16 @@ const GlobalStyle = createGlobalStyle`
   body{
     position: relative;
     overflow-x: hidden;
-    background-color: var(--dark-black);
+    background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
     font-family: 'Poppins', sans-serif;
+    * { transition: .2s ease-in-out all;}
   }
   body::-webkit-scrollbar {
     width: .5rem;               /* width of the entire scrollbar */
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
+    background-color: ${({ theme: { colors } }) => colors.primary};
     border-radius: 99px;
   }
   button {

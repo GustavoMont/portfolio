@@ -10,6 +10,10 @@ const WhiteCard = styled.div`
   gap: 0.75rem;
   background-color: ${({ theme: { colors } }) => colors.white};
   color: ${({ theme: { colors } }) => colors.black};
+  border: #eee solid 1px;
+  -webkit-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
+  -moz-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
+  box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
 `;
 
 export default WhiteCard;
