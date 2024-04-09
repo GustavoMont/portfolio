@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
     font-family: 'Poppins', sans-serif;
-    * { transition: .2s ease-in-out all;}
+    * {transition: .2s ease all;}
   }
   body::-webkit-scrollbar {
     width: .5rem;               /* width of the entire scrollbar */

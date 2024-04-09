@@ -42,7 +42,7 @@ function ProjectLink({ linkType, href }: ProjectLinkProps) {
       lineColor="primary"
       href={href || ""}
     >
-      <div>{linkContent.icon}</div>
+      {linkContent.icon}
       <ButtonText className="mt-0.5">{linkContent.text}</ButtonText>
     </UnderlinedLink>
   );

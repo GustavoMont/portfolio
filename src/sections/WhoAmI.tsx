@@ -4,7 +4,7 @@ import Layout from "src/styles/common/Layout";
 import { H3, Span } from "src/styles/Typograph";
 import SectionObserver from "src/components/common/SectionObserver";
 import { WhoAmISection } from "src/styles/sections/WhoAmISection.style";
-import { parseToHtml } from "src/functions/parseToHtml";
+import Markdown from "markdown-to-jsx";
 
 interface WhoIAmProps {
   mainText: string;
@@ -27,11 +27,7 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
             </div>
             <SectionObserver href="#quem-sou">
               <div data-aos="fade-right" className="about-me">
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: parseToHtml(mainText),
-                  }}
-                />
+                <Markdown>{mainText}</Markdown>
               </div>
             </SectionObserver>
           </div>

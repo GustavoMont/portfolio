@@ -3,7 +3,7 @@ import Project from "src/models/Project";
 import ProjectCard from "src/styles/common/ProjectCard";
 import { H5 } from "src/styles/Typograph";
 import ProjectLink from "./ProjectLink";
-import { parseToHtml } from "src/functions/parseToHtml";
+import Markdown from "markdown-to-jsx";
 
 interface ProjectComponentProps {
   project: Project;
@@ -30,11 +30,7 @@ function ProjectComponent({ project }: ProjectComponentProps) {
       </div>
       <div className="container description overlay">
         <div className="text">
-          <span
-            dangerouslySetInnerHTML={{
-              __html: parseToHtml(project.description),
-            }}
-          />
+          <Markdown>{project.description}</Markdown>
         </div>
         <div className="links">
           <>

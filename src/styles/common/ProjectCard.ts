@@ -28,14 +28,13 @@ const ProjectCard = styled.div<ProjectCard>`
   }
   .title {
     opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 0 : 1)};
-    transition: 1s ease all;
   }
   .overlay {
     background: rgba(
       0,
       0,
       0,
-      ${({ isDescriptionActive }) => (isDescriptionActive ? 0.9 : 0.7)}
+      ${({ isDescriptionActive }) => (isDescriptionActive ? 0.9 : 0.6)}
     );
   }
   -webkit-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
@@ -43,10 +42,10 @@ const ProjectCard = styled.div<ProjectCard>`
   box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
 
   .description {
+    transition: 0.5s ease all;
     position: absolute;
     top: ${({ isDescriptionActive }) => (isDescriptionActive ? "0" : "100%")};
-    opacity: ${({ isDescriptionActive }) => (!isDescriptionActive ? 0.5 : 1)};
-    transition: 0.5s ease all;
+    opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 1 : 0.5)};
     user-select: none;
     margin-bottom: 0.5rem;
     .text {
@@ -63,13 +62,7 @@ const ProjectCard = styled.div<ProjectCard>`
       width: 100%;
       svg {
         width: 1.5rem;
-      }
-      .link {
-        cursor: pointer;
-        transition: all 0.3s ease;
-        &:hover {
-          color: ${({ theme: { colors } }) => colors["light-primary"]};
-        }
+        transition: none;
       }
     }
   }
