@@ -20,8 +20,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-visibility-sensor": "^5.1.1",
-    "styled-components": "^5.3.5",
-    "use-sound": "^4.0.1"
+    "styled-components": "^5.3.5"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
