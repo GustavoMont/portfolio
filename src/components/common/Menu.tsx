@@ -12,8 +12,6 @@ import {
 } from "src/styles/Navbar";
 import { CloseIcon, Hamburger } from "../icons";
 import { IconButton } from "./IconButton";
-import Button from "src/styles/Button";
-import { useTheme } from "data/hooks/useTheme";
 
 interface Options {
   href: ActiveSectionHref;
@@ -68,11 +66,6 @@ export default function Menu() {
   }
 
   const optionList = <ul>{options.map(navLinks)}</ul>;
-  const { setActiveTheme, activeTheme } = useTheme();
-
-  const onChangeTheme = () => {
-    setActiveTheme(activeTheme === "main" ? "light" : "main");
-  };
 
   return (
     <>
@@ -89,17 +82,7 @@ export default function Menu() {
               <Hamburger />
             </IconButton>
           </NavbarIconContainer>
-          <NavbarListContainer>
-            <Button
-              onClick={onChangeTheme}
-              border="fill"
-              color="primary"
-              rounded="default"
-            >
-              TEMA
-            </Button>
-            {optionList}
-          </NavbarListContainer>
+          <NavbarListContainer>{optionList}</NavbarListContainer>
         </Navbar>
       </header>
       <MobileMenu active={activeMobileMenu} ref={menuRef}>
