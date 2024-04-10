@@ -9,6 +9,7 @@ interface UnderlinedLinkProps {
 const UnderlinedLink = styled.a<UnderlinedLinkProps>`
   position: relative;
   &:hover {
+    color: ${({ lineColor, theme: { colors } }) => colors[lineColor]};
     :after {
       width: 100%;
     }

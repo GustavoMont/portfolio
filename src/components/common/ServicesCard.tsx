@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Markdown from "markdown-to-jsx";
 import React from "react";
-import { parseToHtml } from "src/functions/parseToHtml";
 import Service from "src/models/Service";
 import { Subtitle } from "src/styles/Typograph";
 import WhiteCard from "src/styles/WhiteCard";
@@ -22,11 +22,7 @@ export default function ServicesCard({ isOdd, service }: ServiceCardProps) {
         {service.title}
       </Subtitle>
       <div>
-        <span
-          dangerouslySetInnerHTML={{
-            __html: parseToHtml(service.description),
-          }}
-        />
+        <Markdown>{service.description}</Markdown>
       </div>
     </WhiteCard>
   );
