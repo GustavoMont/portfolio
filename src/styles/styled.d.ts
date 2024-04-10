@@ -13,6 +13,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     colors: Colors;
     backgroundScreen: string;
+    bodyTextColor: string;
     fonts: Fonts;
   }
 }

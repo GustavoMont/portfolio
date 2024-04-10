@@ -11,7 +11,7 @@ const Layout = styled.section<LayoutProps>`
   display: grid;
   min-height: ${({ isNotScreenHeight = false }) =>
     isNotScreenHeight ? "0" : "100vh"};
-  color: ${({ theme: { colors } }) => colors.white};
+  color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
   background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
   img {
     width: 85%;

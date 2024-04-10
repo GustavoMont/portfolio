@@ -1,18 +1,13 @@
 import styled from "styled-components";
-import { ColorKey } from "./colors/colors.type";
 import { BREAKPOINTS } from "./constants/breaking-points-styles.constants";
 
-type Props = {
-  color?: ColorKey;
-};
-
-const Logo = styled.h1<Props>`
+const Logo = styled.h1`
   font-family: ${({ theme: { fonts } }) => fonts.title};
   font-size: 23px;
   font-weight: bold;
   width: fit-content;
   height: 100%;
-  color: ${({ color = "white", theme: { colors } }) => colors[color]};
+  color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
   cursor: pointer;
   @media (min-width: ${BREAKPOINTS.md}) {
     font-size: 46px;

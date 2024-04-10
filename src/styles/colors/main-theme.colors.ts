@@ -1,6 +1,6 @@
 import { Colors } from "./colors.type";
 
-export const lightThemeColors: Colors = {
+export const mainThemeColors: Colors = {
   "light-primary": "#A369F0",
   primary: "#6F36BB",
   "dark-primary": "#35174D",
