@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
   }
   p, span {
     font-family: ${({ theme: { fonts } }) => fonts.title};
+    color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
   }
 `;
 

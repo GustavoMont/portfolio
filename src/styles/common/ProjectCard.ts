@@ -48,6 +48,10 @@ const ProjectCard = styled.div<ProjectCard>`
     opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 1 : 0.5)};
     user-select: none;
     margin-bottom: 0.5rem;
+    p,
+    span {
+      color: ${({ theme: { colors } }) => colors.white};
+    }
     .text {
       flex: 1;
       display: flex;

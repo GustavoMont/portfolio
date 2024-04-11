@@ -12,7 +12,9 @@ const handleTextColor = (colors: Colors, color: ColorKey | undefined) =>
 
 interface Props {
   color?: ColorKey;
+  hoverColor?: ColorKey;
   /**Medida em rem(16px) */
+  decoration?: "underline" | "none";
   fontSize?: number;
 }
 
@@ -95,4 +97,9 @@ export const Span = styled.span<Props>`
   font-family: inherit;
   font-size: inherit;
   color: ${({ color, theme: { colors } }) => handleTextColor(colors, color)};
+  text-decoration: ${({ decoration = "none" }) => decoration};
+  :hover {
+    color: ${({ hoverColor, theme: { colors } }) =>
+      hoverColor ? colors[hoverColor] : "inherit"};
+  }
 `;
