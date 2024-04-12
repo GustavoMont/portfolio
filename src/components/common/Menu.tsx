@@ -23,10 +23,10 @@ export default function Menu() {
   const menuRef = useRef<HTMLDivElement>(null);
   const { activeSection, setAsActive } = useSection();
   const options: Options[] = [
-    { href: "#quem-sou", title: "Quem sou" },
-    { href: "#o-que-faco", title: "O que faço" },
-    { href: "#portfolio", title: "Portfolio" },
-    { href: "#contatos", title: "Contatos" },
+    { href: "/#quem-sou", title: "Quem sou" },
+    { href: "/#o-que-faco", title: "O que faço" },
+    { href: "/#portfolio", title: "Portfolio" },
+    { href: "/#contatos", title: "Contatos" },
   ];
   function closeMenu() {
     setActiveMobileMenu(false);

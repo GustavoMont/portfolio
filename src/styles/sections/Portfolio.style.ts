@@ -14,8 +14,12 @@ export const PortfolioSection = styled(GridContainer)`
     grid-column-start: 1;
     grid-column-end: 4;
     color: ${({ theme: { colors } }) => colors.white};
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     .project {
       width: 100%;
+      margin: 0 auto;
       .project-link {
         display: flex;
         gap: 0.5rem;

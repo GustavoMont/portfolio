@@ -1,13 +1,13 @@
 import React from "react";
 import UnderlinedLink from "src/styles/common/UnderlinedLink";
-import { ButtonText } from "src/styles/Typograph";
 import { CodeIcon, GithubIcon } from "../icons";
 
-type LinkType = "deploy" | "github";
+type LinkType = "deploy" | "github" | "more-info";
 
 interface ProjectLinkProps {
   linkType: LinkType;
   href?: string;
+  isInternal?: boolean;
 }
 
 interface LinkContent {
@@ -19,7 +19,7 @@ type LinkHandler = {
   [key in LinkType]: LinkContent;
 };
 
-function ProjectLink({ linkType, href }: ProjectLinkProps) {
+function ProjectLink({ linkType, href, isInternal = false }: ProjectLinkProps) {
   const linkTypeHandler: LinkHandler = {
     deploy: {
       icon: <CodeIcon />,
@@ -28,6 +28,10 @@ function ProjectLink({ linkType, href }: ProjectLinkProps) {
     github: {
       icon: <GithubIcon />,
       text: "Saiba mais",
+    },
+    "more-info": {
+      icon: <CodeIcon />,
+      text: "Ver mais",
     },
   };
   const linkContent = linkTypeHandler[linkType];
@@ -38,12 +42,12 @@ function ProjectLink({ linkType, href }: ProjectLinkProps) {
   return (
     <UnderlinedLink
       className="project-link link"
-      target={"_blank"}
+      target={isInternal ? undefined : "_blank"}
       lineColor="primary"
       href={href || ""}
     >
       {linkContent.icon}
-      <ButtonText className="mt-0.5">{linkContent.text}</ButtonText>
+      {linkContent.text}
     </UnderlinedLink>
   );
 }

@@ -1,5 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ColorKey } from "./colors/colors.type";
+import Link from "next/link";
 
 type borderType = "fill" | "outlined";
 type roundedType = "default" | "pill";
@@ -22,7 +23,7 @@ type ButtonColorVariants = {
 
 function handleColor(
   border: borderType,
-  colors: Required<ButtonColorVariants>,
+  colors: Required<ButtonColorVariants>
 ) {
   switch (border) {
     case "fill":
@@ -32,7 +33,7 @@ function handleColor(
   }
 }
 
-const Button = styled.button<ButtonProps>`
+const buttonStyle = css<ButtonProps>`
   padding: 0.5rem 1rem;
   background-color: ${({ disabled, border, theme: { colors }, color }) => {
     if (disabled && border !== "outlined") {
@@ -75,6 +76,14 @@ const Button = styled.button<ButtonProps>`
       return border === "outlined" ? "transparent" : colors[hoverColor];
     }};
   }
+`;
+
+const Button = styled.button`
+  ${buttonStyle}
+`;
+
+export const LinkButton = styled(Link)`
+  ${buttonStyle}
 `;
 
 export default Button;

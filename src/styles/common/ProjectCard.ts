@@ -11,7 +11,7 @@ const ProjectCard = styled.div<ProjectCard>`
   background-image: url(${(props) => props.thumbnail});
   overflow: hidden;
   width: 100%;
-  max-width: 28rem;
+  max-width: 30rem;
   height: 250px;
   border-radius: 0.5rem;
   box-shadow: 0px 1px 4px #ff4878;

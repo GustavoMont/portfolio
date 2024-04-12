@@ -29,7 +29,7 @@ export const Breadcrumb: React.FC<Props> = ({
         const isActive = !isHomeHref && pathname.includes(href);
         return (
           <Link href={href} key={href}>
-            <BreadecrumbContainer>
+            <FlexContainer>
               <Span
                 decoration="underline"
                 color={isActive ? color : undefined}
@@ -38,11 +38,11 @@ export const Breadcrumb: React.FC<Props> = ({
                 {text}
               </Span>
               {index < array.length - 1 ? (
-                <Span data-role="separator">&gt;</Span>
+                <Span className="separator">&gt;</Span>
               ) : (
                 <></>
               )}
-            </BreadecrumbContainer>
+            </FlexContainer>
           </Link>
         );
       })}
@@ -50,8 +50,22 @@ export const Breadcrumb: React.FC<Props> = ({
   );
 };
 
-const BreadecrumbContainer = styled.div`
+const FlexContainer = styled.div`
   display: flex;
-  gap: 0.5rem;
   align-items: center;
+`;
+
+const BreadecrumbContainer = styled(FlexContainer)`
+  span {
+    display: block;
+    max-width: 140px;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    white-space: nowrap;
+    font-size: 0.9rem;
+  }
+  span.separator {
+    margin: 0 0.5rem;
+    display: inline;
+  }
 `;
