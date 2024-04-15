@@ -10,7 +10,7 @@ const DEFAULT_CONFIG = {
 
 const createRequester = (
   url = BASE_URL,
-  config: RequestInit = DEFAULT_CONFIG
+  config: RequestInit = DEFAULT_CONFIG,
 ) => {
   return {
     async post<T>(body: T) {

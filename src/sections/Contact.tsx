@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setFormData({
       ...formData,

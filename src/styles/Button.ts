@@ -23,7 +23,7 @@ type ButtonColorVariants = {
 
 function handleColor(
   border: borderType,
-  colors: Required<ButtonColorVariants>
+  colors: Required<ButtonColorVariants>,
 ) {
   switch (border) {
     case "fill":
