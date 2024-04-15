@@ -9,7 +9,10 @@ const WhiteCard = styled.div`
   align-items: center;
   gap: 0.75rem;
   background-color: ${({ theme: { colors } }) => colors.white};
-  color: ${({ theme: { colors } }) => colors.black};
+  p,
+  span {
+    color: ${({ theme: { colors } }) => colors.black};
+  }
   border: #eee solid 1px;
   -webkit-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);
   -moz-box-shadow: 2px 4px 34px -5px rgba(0, 0, 0, 0.54);

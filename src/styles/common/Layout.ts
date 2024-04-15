@@ -1,24 +1,32 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { BREAKPOINTS } from "../constants/breaking-points-styles.constants";
 
 interface LayoutProps {
   isNotScreenHeight?: boolean;
 }
 
-const Layout = styled.section<LayoutProps>`
-  padding: 0 2rem;
+export const defaultXPading = css`
+  padding-left: 2rem;
+  padding-right: 2rem;
+`;
+
+export const layoutStyle = css<LayoutProps>`
+  ${defaultXPading}
   padding-top: 3.5rem;
   display: grid;
   min-height: ${({ isNotScreenHeight = false }) =>
     isNotScreenHeight ? "0" : "100vh"};
-  color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
-  background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
+
   img {
     width: 85%;
   }
   @media (min-width: ${BREAKPOINTS.md}) {
     padding-top: 4rem;
   }
+`;
+
+const Layout = styled.section<LayoutProps>`
+  ${layoutStyle}
 `;
 
 export default Layout;

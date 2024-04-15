@@ -21,8 +21,9 @@ const GlobalStyle = createGlobalStyle`
   body{
     position: relative;
     overflow-x: hidden;
-    background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
     font-family: 'Poppins', sans-serif;
+    color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
+    background-color: ${({ theme: { backgroundScreen } }) => backgroundScreen};
     * {transition: .2s ease all;}
   }
   body::-webkit-scrollbar {
@@ -41,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
   }
   p, span {
     font-family: ${({ theme: { fonts } }) => fonts.title};
+    color: ${({ theme: { bodyTextColor } }) => bodyTextColor};
   }
 `;
 

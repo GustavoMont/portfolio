@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   function changeValue(
-    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) {
     setFormData({
       ...formData,
@@ -74,7 +74,7 @@ export default function Contact() {
       <ContactSection className="items-center">
         <div className="contact-container">
           <div data-aos="fade-right">
-            <SectionObserver href="#contatos">
+            <SectionObserver href="/#contatos">
               <H3>Vamos bater um papo</H3>
             </SectionObserver>
           </div>

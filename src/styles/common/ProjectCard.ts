@@ -11,7 +11,7 @@ const ProjectCard = styled.div<ProjectCard>`
   background-image: url(${(props) => props.thumbnail});
   overflow: hidden;
   width: 100%;
-  max-width: 28rem;
+  max-width: 30rem;
   height: 250px;
   border-radius: 0.5rem;
   box-shadow: 0px 1px 4px #ff4878;
@@ -48,6 +48,10 @@ const ProjectCard = styled.div<ProjectCard>`
     opacity: ${({ isDescriptionActive }) => (isDescriptionActive ? 1 : 0.5)};
     user-select: none;
     margin-bottom: 0.5rem;
+    p,
+    span {
+      color: ${({ theme: { colors } }) => colors.white};
+    }
     .text {
       flex: 1;
       display: flex;

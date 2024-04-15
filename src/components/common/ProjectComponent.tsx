@@ -33,12 +33,11 @@ function ProjectComponent({ project }: ProjectComponentProps) {
           <Markdown>{project.description}</Markdown>
         </div>
         <div className="links">
-          <>
-            <ProjectLink linkType="deploy" href={project.deployLink} />
-          </>
-          <>
-            <ProjectLink linkType="github" href={project.githubLink} />
-          </>
+          <ProjectLink
+            isInternal
+            linkType="more-info"
+            href={`/projetos/${project.id}`}
+          />
         </div>
       </div>
     </ProjectCard>

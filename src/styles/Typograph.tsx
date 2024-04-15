@@ -12,14 +12,21 @@ const handleTextColor = (colors: Colors, color: ColorKey | undefined) =>
 
 interface Props {
   color?: ColorKey;
+  hoverColor?: ColorKey;
+  decoration?: "underline" | "none";
   /**Medida em rem(16px) */
   fontSize?: number;
+  wrapText?: boolean;
 }
 
 export const H2 = styled.h2<Props>`
   color: ${({ color, theme: { colors } }) => handleTextColor(colors, color)};
   font-family: ${({ theme: { fonts } }) => fonts.title};
   font-size: ${({ fontSize = 2 }) => `${fontSize}rem`};
+  white-space: ${({ wrapText = true }) => (wrapText ? "wrap" : "nowrap")};
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow-x: hidden;
 `;
 
 export const H5: React.FC<PropsWithChildren<Heading>> = ({
@@ -95,4 +102,9 @@ export const Span = styled.span<Props>`
   font-family: inherit;
   font-size: inherit;
   color: ${({ color, theme: { colors } }) => handleTextColor(colors, color)};
+  text-decoration: ${({ decoration = "none" }) => decoration};
+  :hover {
+    color: ${({ hoverColor, theme: { colors } }) =>
+      hoverColor ? colors[hoverColor] : "inherit"};
+  }
 `;

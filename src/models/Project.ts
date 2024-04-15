@@ -5,6 +5,13 @@ export enum ProjectType {
   MOB = "MOB",
 }
 
+export type Thumbnail = {
+  alt: string;
+  url: string;
+};
+
+export type GalleryItem = Thumbnail & { id: string };
+
 export default interface Project {
   id: string;
   title: string;
@@ -12,8 +19,6 @@ export default interface Project {
   deployLink?: string;
   githubLink?: string;
   description: string;
-  thumbnail: {
-    alt: string;
-    url: string;
-  };
+  thumbnail: Thumbnail;
+  gallery: GalleryItem[];
 }
