@@ -9,6 +9,7 @@ export const ProjectLayout = styled.main`
   padding-right: 0;
   max-width: ${MAX_WIDTH}px;
   margin: 0 auto;
+  height: fit-content;
   & > :not(.hero) {
     ${defaultXPading}
   }
@@ -29,9 +30,22 @@ export const ProjectLayout = styled.main`
       display: none;
     }
   }
-  & > section {
+  & > section.project-description {
     @media (min-width: ${BREAKPOINTS.md}) {
       display: none;
+    }
+  }
+  #gallery {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+    li {
+      position: relative;
+      height: 16rem;
+      img {
+        object-fit: cover;
+      }
     }
   }
 `;

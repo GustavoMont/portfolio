@@ -38,14 +38,14 @@ const ImageContainer = styled.div`
     @media (min-width: ${BREAKPOINTS.md}) {
       background: linear-gradient(
         115deg,
-        rgba(0, 0, 0, 1) 40%,
+        ${({ theme: { backgroundScreen } }) => backgroundScreen} 35%,
         rgba(255, 255, 255, 0) 100%
       );
       top: 0;
     }
     background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 1) 20%,
+      ${({ theme: { backgroundScreen } }) => backgroundScreen} 0%,
       rgba(255, 255, 255, 0) 100%
     );
     width: 100%;

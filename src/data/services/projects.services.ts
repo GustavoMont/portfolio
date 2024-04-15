@@ -10,10 +10,15 @@ export const getProject = async (id: string) => {
             id,
             thumbnail {url, alt},
             title,
-            description
+            description,
+            gallery {
+              alt,
+              id,
+              url
+            }
           }
     }`,
   });
   const res = await request.json();
-  return res.data.project as Project;
+  return res.data.project as Omit<Project, "projectType">;
 };

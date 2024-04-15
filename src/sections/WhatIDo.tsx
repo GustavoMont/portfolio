@@ -20,7 +20,7 @@ export default function WhatIDo({ services }: WhatIDoProps) {
     <Layout isNotScreenHeight id="o-que-faco">
       <WhatIDoSection>
         <H3>O que faço</H3>
-        <SectionObserver href="#o-que-faco">
+        <SectionObserver href="/#o-que-faco">
           <FlexContainer className="service-list">
             {services.map(renderCard)}
           </FlexContainer>

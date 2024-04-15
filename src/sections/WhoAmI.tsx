@@ -25,7 +25,7 @@ export default function WhoAmI({ mainText }: WhoIAmProps) {
                 <Span color="primary">Gustavo Monteiro 👋</Span>
               </H3>
             </div>
-            <SectionObserver href="#quem-sou">
+            <SectionObserver href="/#quem-sou">
               <div data-aos="fade-right" className="about-me">
                 <Markdown>{mainText}</Markdown>
               </div>

@@ -17,7 +17,7 @@ export const ProjectDescriptionSection: React.FC<Props> = ({
   url,
 }) => {
   return (
-    <Section>
+    <Section className="project-description">
       <H2 color="primary">{title}</H2>
       <p>
         <Markdown>{description}</Markdown>

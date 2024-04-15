@@ -1,12 +1,14 @@
 import { GetServerSideProps } from "next";
+import Image from "next/image";
 import React from "react";
 import { Breadcrumb, BreadcrumbItem } from "src/components/common/Breadcrumb";
+import { GalleryList } from "src/components/common/Gallery";
 import { PageCover } from "src/components/common/PageCover";
 import { ProjectDescriptionSection } from "src/components/projects/ProjectDescriptionSection";
 import { ProjectLayout } from "src/components/projects/ProjectLayout";
 import { getProject } from "src/data/services/projects.services";
 import Project from "src/models/Project";
-import { H2 } from "src/styles/Typograph";
+import { H2, H3 } from "src/styles/Typograph";
 
 type Props = {
   project: Project;
@@ -42,13 +44,26 @@ function Projetos({ project }: Props) {
       <PageCover
         className="hero"
         imageData={{
-          alt: project.thumbnail.alt,
+          alt: project.thumbnail.alt ?? `capa do projeto ${project.title}`,
           src: project.thumbnail.url,
         }}
       >
         {projectInfo}
       </PageCover>
       {projectInfo}
+      <section id="gallery">
+        {project.gallery.length ? <H3 color="secondary">Galeria</H3> : <></>}
+        <GalleryList>
+          {project.gallery.map((image) => (
+            <li
+              style={{ position: "relative", width: "100%", height: "200px" }}
+              key={image.id}
+            >
+              <Image alt={image.alt} src={image.url} fill />
+            </li>
+          ))}
+        </GalleryList>
+      </section>
     </ProjectLayout>
   );
 }
